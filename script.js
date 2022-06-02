@@ -1,28 +1,113 @@
 $(function(){
 
-    $('#start').click(function(){
-
-        let minutes = Number($('#minutes').val());
-        let seconds = Number($('#seconds').val());
-        timer = setInterval(function(){
-            seconds = seconds - 1;
-            $('#seconds').val(seconds);
-            if(seconds <= 0){
-                $('#seconds').val(0);
-            }
-            if(seconds < 0 && minutes > 0){
-                minutes = minutes - 1;
-                seconds = 59;
-                $('#minutes').val(minutes);
-                $('#seconds').val(59);
-            }
-            
-            if(seconds === 0 && minutes === 0){
-                alert('終了です');
-            }
-        },1000);
-
+    $('#twelve').click(function(){
+        let twelve_remain = Number($('#twelve_remain').val());
+        let remain_count = Number($('#remain_count').val());
+        twelve_remain = twelve_remain - 1;
+        remain_count = remain_count - 1;
+        $('#twelve_remain').val(twelve_remain);
+        $('#remain_count').val(remain_count);
+        $('#count').val(0);
     });
+
+    $('#fourteen').click(function(){
+
+        = setInterval(function(){
+           seconds = seconds - 1;
+           
+       });
+
+   });
+
+   $('#fifteen').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
+
+$('#eighteen').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
+
+$('#ten').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
+
+$('#twenty').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
+
+$('#thirty').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
+
+$('#fifty').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
+
+$('#reset').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
+
+$('#button_thousand').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
+
+$('#button_hundred').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
+
+$('#button_ten').click(function(){
+
+    = setInterval(function(){
+       seconds = seconds - 1;
+       
+   });
+
+});
 
     $('#stop').click(function(){
         clearInterval(timer);

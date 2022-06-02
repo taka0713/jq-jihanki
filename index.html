@@ -18,10 +18,10 @@
   <header>
     <div class="wrapper">自販機
       <div class="quantity_one">
-        <label><input type="text" value="10" class="remaining"></label>
-        <label><input type="text" value="10" class="remaining"></label>
-        <label><input type="text" value="10" class="remaining"></label>
-        <label><input type="text" value="10" class="remaining"></label>
+        <label><input type="text" id="twelve_remain" value="10" class="remaining"></label>
+        <label><input type="text" id="fourteen_remain" value="10" class="remaining"></label>
+        <label><input type="text" id="fifteen_remain" value="10" class="remaining"></label>
+        <label><input type="text" id="eighteen_remain" value="10" class="remaining"></label>
       </div>
       <div class="juice_top">
           <div class="juice_one">
@@ -45,10 +45,10 @@
         <button type="button" id="eighteen" class="juice_button">180円</button>
       </div>
       <div class="quantity_two">
-        <label><input type="text" value="10" class="remaining"></label>
-        <label><input type="text" value="10" class="remaining"></label>
-        <label><input type="text" value="10" class="remaining"></label>
-        <label><input type="text" value="10" class="remaining"></label>
+        <label><input type="text" id="ten_remain" value="10" class="remaining"></label>
+        <label><input type="text" id="twenty_remain" value="10" class="remaining"></label>
+        <label><input type="text" id="thirty_remain" value="10" class="remaining"></label>
+        <label><input type="text" id="fifty_remain" value="10" class="remaining"></label>
       </div>
       <div class="juice_bottom">
         <div class="juice_five">
@@ -71,15 +71,15 @@
         <button type="button" id="fifty" class="juice_button">500円</button>
       </div>
       <div class="money">
-        <p><input type="text" class="money_count">円</p>
-        <button type="button" class="money_reset">リセット</button>
+        <p><input type="text" id="count" value="0" class="money_count">円</p>
+        <button type="button" id="reset" class="money_reset">リセット</button>
         <div class="money_input"></div>
       </div>
       <div class="take_out"></div>
     </div>
     <div class="container">
       <div class="remaining_juice">
-        <p>残り<input type="text" value="80" class="money_count">本</p>
+        <p>残り<input type="text" id="remain_count" value="80" class="money_count">本</p>
         <p>財布<input type="text" value="5000" class="money_count">円</p>
         <p>千円<input type="text" value="4" class="money_count">枚<button type="button" id="button_thousand" class="money_button">千</button></p>
         <p>百円<input type="text" value="9" class="money_count">枚<button type="button" id="button_hundred" class="money_button">百</button></p>
