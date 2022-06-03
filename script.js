@@ -30,8 +30,7 @@ $(function(){
 
 $('#eighteen').click(function(){
 
-    = setInterval(function(){
-       seconds = seconds - 1;
+    
        
    });
 
@@ -39,8 +38,7 @@ $('#eighteen').click(function(){
 
 $('#ten').click(function(){
 
-    = setInterval(function(){
-       seconds = seconds - 1;
+    
        
    });
 
@@ -48,64 +46,41 @@ $('#ten').click(function(){
 
 $('#twenty').click(function(){
 
-    = setInterval(function(){
-       seconds = seconds - 1;
-       
-   });
+    
 
 });
 
 $('#thirty').click(function(){
 
-    = setInterval(function(){
-       seconds = seconds - 1;
-       
-   });
+    
 
 });
 
 $('#fifty').click(function(){
 
-    = setInterval(function(){
-       seconds = seconds - 1;
-       
-   });
+    
 
 });
 
 $('#reset').click(function(){
 
-    = setInterval(function(){
-       seconds = seconds - 1;
-       
-   });
+    
 
 });
 
 $('#button_thousand').click(function(){
 
-    = setInterval(function(){
-       seconds = seconds - 1;
-       
-   });
-
+    
 });
 
 $('#button_hundred').click(function(){
 
-    = setInterval(function(){
-       seconds = seconds - 1;
-       
-   });
-
+    
 });
 
 $('#button_ten').click(function(){
 
-    = setInterval(function(){
-       seconds = seconds - 1;
-       
-   });
+    
 
 });
 
