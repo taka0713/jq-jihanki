@@ -1,92 +1,248 @@
 $(function(){
 
+    $('#money_thou,#money_ten,#money_one').change(function(){
+        let money_thou = Number($('#money_thou').val());
+        let money_ten = Number($('#money_ten').val());
+        let money_one = Number($('#money_one').val());
+        total_money = money_thou * 1000 + money_ten * 100 + money_one * 10;
+        $('#money_fifty').text(total_money);
+    });
+
+    $('#button_thousand').click(function(){
+        let money_thou_yen = Number($('#money_thou').val());
+        let money_thou = Number($('#money_thou').val());
+        let money_ten = Number($('#money_ten').val());
+        let money_one = Number($('#money_one').val());
+        let total_count = 0;
+        if(money_thou_yen > 0){
+            money_thou_yen = money_thou_yen - 1;
+            $('#money_thou').val(money_thou_yen);
+            total_money = money_thou * 1000 + money_ten * 100 + money_one * 10;
+            total_money = total_money - 1000;
+            $('#money_fifty').text(total_money);
+            let count_text = Number($('#count').text());
+            total_count = count_text + 1000;
+            $('#count').text(total_count);
+        }
+        $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+    });
+
+    $('#button_hundred').click(function(){
+        let money_ten_yen = Number($('#money_ten').val());
+        let money_ten = Number($('#money_ten').val());
+        let money_thou = Number($('#money_thou').val());
+        let money_one = Number($('#money_one').val());
+        let total_count = 0;
+        if(money_ten_yen > 0){
+            money_ten_yen = money_ten_yen - 1;
+            $('#money_ten').val(money_ten_yen);
+            total_money = money_thou * 1000 + money_ten * 100 + money_one * 10;
+            total_money = total_money - 100;
+            $('#money_fifty').text(total_money);
+            let count_text = Number($('#count').text());
+            total_count = count_text + 100;
+            $('#count').text(total_count);
+        }
+        if(total_count <= 100){
+            $('#ten').css('outline','1px solid red');
+        }else if (total_count <= 200){
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen').css('outline','1px solid red');
+        }else if (total_count <= 300){
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty').css('outline','1px solid red');
+        }else if (total_count >= 500){
+            $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+        }
+    });
+
+    $('#button_ten').click(function(){
+        let money_one_yen = Number($('#money_one').val());
+        let money_thou = Number($('#money_thou').val());
+        let money_ten = Number($('#money_ten').val());
+        let money_one = Number($('#money_one').val());
+        let total_count = 0;
+        if(money_one_yen > 0){
+            money_one_yen = money_one_yen - 1;
+            $('#money_one').val(money_one_yen);
+            total_money = money_thou * 1000 + money_ten * 100 + money_one * 10;
+            total_money = total_money - 10;
+            $('#money_fifty').text(total_money);
+            let count_text = Number($('#count').text());
+            total_count = count_text + 10;
+            $('#count').text(total_count);
+        }
+        console.log(total_count);
+        if(total_count <= 100){
+            $('#ten').css('outline','1px solid red');
+        }else if (total_count <= 120){
+            $('#ten,#twelve').css('outline','1px solid red');
+        }else if (total_count <= 140){
+            $('#ten,#twelve,#fourteen').css('outline','1px solid red');
+        }else if (total_count <= 150){
+            $('#ten,#twelve,#fourteen,#fifteen').css('outline','1px solid red');
+        }else if (total_count <= 180){
+            $('#ten,#twelve,#fourteen,#fifteen,#eighteen').css('outline','1px solid red');
+        }else if (total_count <= 200){
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen').css('outline','1px solid red');
+        }else if (total_count <= 300){
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty').css('outline','1px solid red');
+        }else if (total_count >= 500){
+            $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+        }
+    });
+
+
     $('#twelve').click(function(){
         let twelve_remain = Number($('#twelve_remain').val());
         let remain_count = Number($('#remain_count').val());
+        let side_mituya = Number($('#side_mituya').text());
+        if(twelve_remain > 0){
         twelve_remain = twelve_remain - 1;
         remain_count = remain_count - 1;
+        side_mituya = side_mituya + 1;
         $('#twelve_remain').val(twelve_remain);
         $('#remain_count').val(remain_count);
         $('#count').val(0);
+        $('#side_mituya').text(side_mituya);
+        }
     });
 
     $('#fourteen').click(function(){
-
-        = setInterval(function(){
-           seconds = seconds - 1;
-           
-       });
-
+        let fourteen_remain = Number($('#fourteen_remain').val());
+        let remain_count = Number($('#remain_count').val());
+        let side_pon = Number($('#side_pon').text());
+        if(fourteen_remain > 0){
+        fourteen_remain = fourteen_remain - 1;
+        remain_count = remain_count - 1;
+        side_pon = side_pon + 1;
+        $('#fourteen_remain').val(fourteen_remain);
+        $('#remain_count').val(remain_count);
+        $('#count').val(0);
+        $('#side_pon').text(side_pon);
+        }
    });
 
    $('#fifteen').click(function(){
+        let fifteen_remain = Number($('#fifteen_remain').val());
+        let remain_count = Number($('#remain_count').val());
+        let side_toropi = Number($('#side_toropi').text());
+        if(fifteen_remain > 0){
+        fifteen_remain = fifteen_remain - 1;
+        remain_count = remain_count - 1;
+        side_toropi = side_toropi + 1;
+        $('#fifteen_remain').val(fifteen_remain);
+        $('#remain_count').val(remain_count);
+        $('#count').val(0);
+        $('#side_toropi').text(side_toropi);
+        }
 
-    = setInterval(function(){
-       seconds = seconds - 1;
-       
-   });
-
-});
-
-$('#eighteen').click(function(){
-
-    
-       
-   });
-
-});
-
-$('#ten').click(function(){
-
-    
-       
-   });
-
-});
-
-$('#twenty').click(function(){
-
-    
-
-});
-
-$('#thirty').click(function(){
-
-    
-
-});
-
-$('#fifty').click(function(){
-
-    
-
-});
-
-$('#reset').click(function(){
-
-    
-
-});
-
-$('#button_thousand').click(function(){
-
-    
-});
-
-$('#button_hundred').click(function(){
-
-    
-});
-
-$('#button_ten').click(function(){
-
-    
-
-});
-
-    $('#stop').click(function(){
-        clearInterval(timer);
-        
     });
+
+    $('#eighteen').click(function(){
+        let eighteen_remain = Number($('#eighteen_remain').val());
+        let remain_count = Number($('#remain_count').val());
+        let side_tea = Number($('#side_tea').text());
+        if(eighteen_remain > 0){
+        eighteen_remain = eighteen_remain - 1;
+        remain_count = remain_count - 1;
+        side_tea = side_tea + 1;
+        $('#eighteen_remain').val(eighteen_remain);
+        $('#remain_count').val(remain_count);
+        $('#count').val(0);
+        $('#side_tea').text(side_tea);
+    }
+
+    });
+
+    $('#ten').click(function(){
+        let ten_remain = Number($('#ten_remain').val());
+        let remain_count = Number($('#remain_count').val());
+        let side_lemon = Number($('#side_lemon').text());
+        if(ten_remain > 0){
+        ten_remain = ten_remain - 1;
+        remain_count = remain_count - 1;
+        side_lemon = side_lemon + 1;
+        $('#ten_remain').val(ten_remain);
+        $('#remain_count').val(remain_count);
+        $('#count').val(0);
+        $('#side_lemon').text(side_lemon);
+        }
+    });
+
+    $('#twenty').click(function(){
+        let twenty_remain = Number($('#twenty_remain').val());
+        let remain_count = Number($('#remain_count').val());
+        let side_nekuta = Number($('#side_nekuta').text());
+        if(twenty_remain > 0){
+        twenty_remain = twenty_remain - 1;
+        remain_count = remain_count - 1;
+        side_nekuta = side_nekuta + 1;
+        $('#twenty_remain').val(twenty_remain);
+        $('#remain_count').val(remain_count);
+        $('#count').val(0);
+        $('#side_nekuta').text(side_nekuta);
+        }
     
+
+    });
+
+    $('#thirty').click(function(){
+        let thirty_remain = Number($('#thirty_remain').val());
+        let remain_count = Number($('#remain_count').val());
+        let side_cola = Number($('#side_cola').text());
+        if(thirty_remain > 0){
+        thirty_remain = thirty_remain - 1;
+        remain_count = remain_count - 1;
+        side_cola = side_cola + 1;
+        $('#thirty_remain').val(thirty_remain);
+        $('#remain_count').val(remain_count);
+        $('#count').val(0);
+        $('#side_cola').text(side_cola);
+        }
+    
+
+    });
+
+    $('#fifty').click(function(){
+        let fifty_remain = Number($('#fifty_remain').val());
+        let remain_count = Number($('#remain_count').val());
+        let side_pain = Number($('#side_pain').text());
+        if(fifty_remain > 0){
+        fifty_remain = fifty_remain - 1;
+        remain_count = remain_count - 1;
+        side_pain = side_pain + 1;
+        $('#fifty_remain').val(fifty_remain);
+        $('#remain_count').val(remain_count);
+        $('#count').val(0);
+        $('#side_pain').text(side_pain);
+        }
+    
+
+    });
+
+    $('#reset').click(function(){
+        $('#count').text(0);
+        $('#money_fifty').text(5000);
+        $('#money_thou').val(4);
+        $('#money_ten').val(9);
+        $('#money_one').val(10);
+        $('#remain_count').val(80);
+        $('#twelve_remain').val(10);
+        $('#fourteen_remain').val(10);
+        $('#fifteen_remain').val(10);
+        $('#eighteen_remain').val(10);
+        $('#ten_remain').val(10);
+        $('#twenty_remain').val(10);
+        $('#thirty_remain').val(10);
+        $('#fifty_remain').val(10);
+        $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','none');
+        $('#side_mituya').text(0);
+        $('#side_pon').text(0);
+        $('#side_toropi').text(0);
+        $('#side_tea').text(0);
+        $('#side_lemon').text(0);
+        $('#side_nekuta').text(0);
+        $('#side_cola').text(0);
+        $('#side_pain').text(0);
+    });
+
 });
