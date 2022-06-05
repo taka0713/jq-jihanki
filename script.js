@@ -1,5 +1,10 @@
 $(function(){
 
+    $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', true);
+    let count_yen = Number($('#count').text());
+    
+
+
     $('#money_thou,#money_ten,#money_one').change(function(){
         let money_thou = Number($('#money_thou').val());
         let money_ten = Number($('#money_ten').val());
@@ -25,6 +30,7 @@ $(function(){
             $('#count').text(total_count);
         }
         $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+        $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
     });
 
     $('#button_hundred').click(function(){
@@ -45,12 +51,16 @@ $(function(){
         }
         if(total_count <= 100){
             $('#ten').css('outline','1px solid red');
+            $('#ten').prop('disabled', false);
         }else if (total_count <= 200){
             $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen').css('outline','1px solid red');
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen').prop('disabled', false);
         }else if (total_count <= 300){
             $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty').css('outline','1px solid red');
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty').prop('disabled', false);
         }else if (total_count >= 500){
             $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty,#fifty').prop('disabled', false);
         }
     });
 
@@ -70,23 +80,31 @@ $(function(){
             total_count = count_text + 10;
             $('#count').text(total_count);
         }
-        console.log(total_count);
-        if(total_count <= 100){
+        
+        if(total_count >= 100 && total_count < 120){
             $('#ten').css('outline','1px solid red');
-        }else if (total_count <= 120){
+            $('#ten').prop('disabled', false);
+        }else if (total_count >= 100 && total_count < 140){
             $('#ten,#twelve').css('outline','1px solid red');
-        }else if (total_count <= 140){
+            $('#ten,#twelve').prop('disabled', false);
+        }else if (total_count >= 100 && total_count < 150){
             $('#ten,#twelve,#fourteen').css('outline','1px solid red');
-        }else if (total_count <= 150){
+            $('#ten,#twelve,#fourteen').prop('disabled', false);
+        }else if (total_count >= 100 && total_count < 180){
             $('#ten,#twelve,#fourteen,#fifteen').css('outline','1px solid red');
-        }else if (total_count <= 180){
+            $('#ten,#twelve,#fourteen,#fifteen').prop('disabled', false);
+        }else if (total_count >= 100 && total_count < 200){
             $('#ten,#twelve,#fourteen,#fifteen,#eighteen').css('outline','1px solid red');
-        }else if (total_count <= 200){
+            $('#ten,#twelve,#fourteen,#fifteen,#eighteen').prop('disabled', false);
+        }else if (total_count >= 100 && total_count < 300){
             $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen').css('outline','1px solid red');
-        }else if (total_count <= 300){
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen').prop('disabled', false);
+        }else if (total_count >= 100 && total_count < 500){
             $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty').css('outline','1px solid red');
-        }else if (total_count >= 500){
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty').prop('disabled', false);
+        }else if (total_count >= 100 && total_count < 501){
             $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+            $('#ten,#twelve,#fourteen,#fifteen,#eighteen,#twenty,#thirty,#fifty').prop('disabled', false);
         }
     });
 
@@ -95,14 +113,17 @@ $(function(){
         let twelve_remain = Number($('#twelve_remain').val());
         let remain_count = Number($('#remain_count').val());
         let side_mituya = Number($('#side_mituya').text());
-        if(twelve_remain > 0){
+        let buy_count = Number($('#count').text());
+        if(twelve_remain > 0 && buy_count >= 120){
         twelve_remain = twelve_remain - 1;
         remain_count = remain_count - 1;
         side_mituya = side_mituya + 1;
+        buy_count = buy_count - 120;
         $('#twelve_remain').val(twelve_remain);
         $('#remain_count').val(remain_count);
         $('#count').val(0);
         $('#side_mituya').text(side_mituya);
+        $('#count').text(buy_count);
         }
     });
 
@@ -110,14 +131,17 @@ $(function(){
         let fourteen_remain = Number($('#fourteen_remain').val());
         let remain_count = Number($('#remain_count').val());
         let side_pon = Number($('#side_pon').text());
-        if(fourteen_remain > 0){
+        let buy_count = Number($('#count').text());
+        if(fourteen_remain > 0 && buy_count >= 140){
         fourteen_remain = fourteen_remain - 1;
         remain_count = remain_count - 1;
         side_pon = side_pon + 1;
+        buy_count = buy_count - 140;
         $('#fourteen_remain').val(fourteen_remain);
         $('#remain_count').val(remain_count);
         $('#count').val(0);
         $('#side_pon').text(side_pon);
+        $('#count').text(buy_count);
         }
    });
 
@@ -125,14 +149,17 @@ $(function(){
         let fifteen_remain = Number($('#fifteen_remain').val());
         let remain_count = Number($('#remain_count').val());
         let side_toropi = Number($('#side_toropi').text());
-        if(fifteen_remain > 0){
+        let buy_count = Number($('#count').text());
+        if(fifteen_remain > 0  && buy_count >= 150){
         fifteen_remain = fifteen_remain - 1;
         remain_count = remain_count - 1;
         side_toropi = side_toropi + 1;
+        buy_count = buy_count - 150;
         $('#fifteen_remain').val(fifteen_remain);
         $('#remain_count').val(remain_count);
         $('#count').val(0);
         $('#side_toropi').text(side_toropi);
+        $('#count').text(buy_count);
         }
 
     });
@@ -141,14 +168,17 @@ $(function(){
         let eighteen_remain = Number($('#eighteen_remain').val());
         let remain_count = Number($('#remain_count').val());
         let side_tea = Number($('#side_tea').text());
-        if(eighteen_remain > 0){
+        let buy_count = Number($('#count').text());
+        if(eighteen_remain > 0 && buy_count >= 180){
         eighteen_remain = eighteen_remain - 1;
         remain_count = remain_count - 1;
         side_tea = side_tea + 1;
+        buy_count = buy_count - 180;
         $('#eighteen_remain').val(eighteen_remain);
         $('#remain_count').val(remain_count);
         $('#count').val(0);
         $('#side_tea').text(side_tea);
+        $('#count').text(buy_count);
     }
 
     });
@@ -157,14 +187,17 @@ $(function(){
         let ten_remain = Number($('#ten_remain').val());
         let remain_count = Number($('#remain_count').val());
         let side_lemon = Number($('#side_lemon').text());
-        if(ten_remain > 0){
+        let buy_count = Number($('#count').text());
+        if(ten_remain > 0 && buy_count >= 100){
         ten_remain = ten_remain - 1;
         remain_count = remain_count - 1;
         side_lemon = side_lemon + 1;
+        buy_count = buy_count - 100;
         $('#ten_remain').val(ten_remain);
         $('#remain_count').val(remain_count);
         $('#count').val(0);
         $('#side_lemon').text(side_lemon);
+        $('#count').text(buy_count);
         }
     });
 
@@ -172,14 +205,17 @@ $(function(){
         let twenty_remain = Number($('#twenty_remain').val());
         let remain_count = Number($('#remain_count').val());
         let side_nekuta = Number($('#side_nekuta').text());
-        if(twenty_remain > 0){
+        let buy_count = Number($('#count').text());
+        if(twenty_remain > 0 && buy_count >= 200){
         twenty_remain = twenty_remain - 1;
         remain_count = remain_count - 1;
         side_nekuta = side_nekuta + 1;
+        buy_count = buy_count - 200;
         $('#twenty_remain').val(twenty_remain);
         $('#remain_count').val(remain_count);
         $('#count').val(0);
         $('#side_nekuta').text(side_nekuta);
+        $('#count').text(buy_count);
         }
     
 
@@ -189,14 +225,17 @@ $(function(){
         let thirty_remain = Number($('#thirty_remain').val());
         let remain_count = Number($('#remain_count').val());
         let side_cola = Number($('#side_cola').text());
-        if(thirty_remain > 0){
+        let buy_count = Number($('#count').text());
+        if(thirty_remain > 0 && buy_count >= 300){
         thirty_remain = thirty_remain - 1;
         remain_count = remain_count - 1;
         side_cola = side_cola + 1;
+        buy_count = buy_count - 300;
         $('#thirty_remain').val(thirty_remain);
         $('#remain_count').val(remain_count);
         $('#count').val(0);
         $('#side_cola').text(side_cola);
+        $('#count').text(buy_count);
         }
     
 
@@ -206,14 +245,17 @@ $(function(){
         let fifty_remain = Number($('#fifty_remain').val());
         let remain_count = Number($('#remain_count').val());
         let side_pain = Number($('#side_pain').text());
-        if(fifty_remain > 0){
+        let buy_count = Number($('#count').text());
+        if(fifty_remain > 0 && buy_count >= 500){
         fifty_remain = fifty_remain - 1;
         remain_count = remain_count - 1;
         side_pain = side_pain + 1;
+        buy_count = buy_count - 500;
         $('#fifty_remain').val(fifty_remain);
         $('#remain_count').val(remain_count);
         $('#count').val(0);
         $('#side_pain').text(side_pain);
+        $('#count').text(buy_count);
         }
     
 
@@ -244,5 +286,7 @@ $(function(){
         $('#side_cola').text(0);
         $('#side_pain').text(0);
     });
+
+
 
 });
