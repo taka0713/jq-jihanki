@@ -114,16 +114,29 @@ $(function(){
         let remain_count = Number($('#remain_count').val());
         let side_mituya = Number($('#side_mituya').text());
         let buy_count = Number($('#count').text());
+        let buy_roulette = Math.floor( Math.random() * 99 ) + 1;
+        $('#roulette_one').text(buy_roulette);
+        if(buy_roulette === 11){
+            $('#reset').prop('disabled', true);
+            $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty,#fifty').prop('disabled', false);
+            twelve_remain = twelve_remain - 1;
+            $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','');
+            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty,#fifty').prop('disabled', ture);
+            $('#twelve_remain').val(twelve_remain);
+            $('#reset').prop('disabled', false);
+        }
         if(twelve_remain > 0 && buy_count >= 120){
-        twelve_remain = twelve_remain - 1;
-        remain_count = remain_count - 1;
-        side_mituya = side_mituya + 1;
-        buy_count = buy_count - 120;
-        $('#twelve_remain').val(twelve_remain);
-        $('#remain_count').val(remain_count);
-        $('#count').val(0);
-        $('#side_mituya').text(side_mituya);
-        $('#count').text(buy_count);
+            twelve_remain = twelve_remain - 1;
+            remain_count = remain_count - 1;
+            side_mituya = side_mituya + 1;
+            buy_count = buy_count - 120;
+            $('#twelve_remain').val(twelve_remain);
+            $('#remain_count').val(remain_count);
+            $('#count').val(0);
+            $('#side_mituya').text(side_mituya);
+            $('#count').text(buy_count);
+            
         }
     });
 

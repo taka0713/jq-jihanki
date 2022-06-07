@@ -12,6 +12,10 @@ header{
     background-color: #baf7ec;
 }
 
+.roule{
+    width: 15px;
+}
+
 .juice_top{
     display: flex;
     flex-wrap: wrap;
