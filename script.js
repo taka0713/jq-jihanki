@@ -3,7 +3,22 @@ $(function(){
     $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', true);
     let count_yen = Number($('#count').text());
     
+    $('#count').change(function(){
+        let count_yen = Number($('#count').text());
+        if(count_yen < 500){
+            $('#fifty').prop('disabled', true);
+            $('#fifty').css('outline','none');
+        }
+    });
 
+    $('#twelve_remain').change(function(){
+        let twelve_remain_mitsuya = Number($('#twelve_remain').val());
+        console.log(twelve_remain_mitsuya);
+        if(twelve_remain_mitsuya === 0){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
+    });
 
     $('#money_thou,#money_ten,#money_one').change(function(){
         let money_thou = Number($('#money_thou').val());
@@ -115,17 +130,56 @@ $(function(){
         let side_mituya = Number($('#side_mituya').text());
         let buy_count = Number($('#count').text());
         let buy_roulette = Math.floor( Math.random() * 99 ) + 1;
-        $('#roulette_one').text(buy_roulette);
-        if(buy_roulette === 11){
-            $('#reset').prop('disabled', true);
-            $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
-            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty,#fifty').prop('disabled', false);
-            twelve_remain = twelve_remain - 1;
-            $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','');
-            $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty,#fifty').prop('disabled', ture);
-            $('#twelve_remain').val(twelve_remain);
-            $('#reset').prop('disabled', false);
-        }
+        Number($('#roulette_one').text(buy_roulette));
+        // if(buy_roulette === 11 || buy_roulette === 22 ||buy_roulette === 33 || buy_roulette === 44 || buy_roulette === 55 || buy_roulette === 66 ||buy_roulette === 77 || buy_roulette === 88 || buy_roulette === 99){
+        //     $('#reset').prop('disabled', true);
+        //     $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+        //     $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
+        //     $('#twelve').click(function(){
+        //         twelve_remain = twelve_remain - 1;
+        //         remain_count = remain_count - 1;
+        //         $('#twelve_remain').val(twelve_remain);
+        //     });
+        //     $('#fourteen').click(function(){
+        //         fourteen_remain = fourteen_remain - 1;
+        //         remain_count = remain_count - 1;
+        //         $('#fourteen_remain').val(fourteen_remain);
+        //     });
+        //     $('#fifteen').click(function(){
+        //         fifteen_remain = fifteen_remain - 1;
+        //         remain_count = remain_count - 1;
+        //         $('#fifteen_remain').val(fifteen_remain);
+        //     });
+        //     $('#eighteen').click(function(){
+        //         eighteen_remain = eighteen_remain - 1;
+        //         remain_count = remain_count - 1;
+        //         $('#eighteen_remain').val(eighteen_remain);
+        //     });
+        //     $('#ten').click(function(){
+        //         ten_remain = ten_remain - 1;
+        //         remain_count = remain_count - 1;
+        //         $('#ten_remain').val(ten_remain);
+        //     });
+        //     $('#twenty').click(function(){
+        //         twenty_remain = twenty_remain - 1;
+        //         remain_count = remain_count - 1;
+        //         $('#twenty_remain').val(twenty_remain);
+        //     });
+        //     $('#thirty').click(function(){
+        //         thirty_remain = thirty_remain - 1;
+        //         remain_count = remain_count - 1;
+        //         $('#thirty_remain').val(thirty_remain);
+        //     });
+        //     $('#fifty').click(function(){
+        //         fifty_remain = fifty_remain - 1;
+        //         remain_count = remain_count - 1;
+        //         $('#fifty_remain').val(fifty_remain);
+        //     });
+        //     $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','none');
+        //     $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty,#fifty').prop('disabled', ture);
+        //     $('#reset').prop('disabled', false);
+        // }
+        
         if(twelve_remain > 0 && buy_count >= 120){
             twelve_remain = twelve_remain - 1;
             remain_count = remain_count - 1;
@@ -275,6 +329,14 @@ $(function(){
     });
 
     $('#reset').click(function(){
+        let wallet = Number($('#money_fifty').text());
+        let count_yen = Number($('#count').text());
+        wallet = count_yen + wallet;
+        $('#count').text(0);
+        $('#money_fifty').text(wallet);
+    });
+
+    $('#button_first').click(function(){
         $('#count').text(0);
         $('#money_fifty').text(5000);
         $('#money_thou').val(4);
@@ -298,6 +360,7 @@ $(function(){
         $('#side_nekuta').text(0);
         $('#side_cola').text(0);
         $('#side_pain').text(0);
+        $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', true);
     });
 
 
