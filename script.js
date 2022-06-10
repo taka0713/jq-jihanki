@@ -3,6 +3,8 @@ $(function(){
 
     $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', true);
     let count_yen = Number($('#count').text());
+
+    
     
 
     $('#money_thou,#money_ten,#money_one').change(function(){
@@ -18,6 +20,14 @@ $(function(){
         let money_thou = Number($('#money_thou').val());
         let money_ten = Number($('#money_ten').val());
         let money_one = Number($('#money_one').val());
+        let twelve_sold= Number($('#twelve_remain').val());
+        let fourteen_sold= Number($('#fourteen_remain').val());
+        let fifteen_sold= Number($('#fifteen_remain').val());
+        let eighteen_sold= Number($('#eighteen_remain').val());
+        let ten_sold= Number($('#ten_remain').val());
+        let twenty_sold= Number($('#twenty_remain').val());
+        let thirty_sold= Number($('#thirty_remain').val());
+        let fifty_sold= Number($('#fifty_remain').val());
         let total_count = 0;
         if(money_thou_yen > 0){
             money_thou_yen = money_thou_yen - 1;
@@ -28,9 +38,43 @@ $(function(){
             let count_text = Number($('#count').text());
             total_count = count_text + 1000;
             $('#count').text(total_count);
+
+            $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+            $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
         }
-        $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
-        $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
+        if(twelve_sold === 0){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
+        if(fourteen_sold === 0){
+            $('#fourteen').prop('disabled', true);
+            $('#fourteen').css('outline','none');
+        }
+        if(fifteen_sold === 0){
+            $('#fifteen').prop('disabled', true);
+            $('#fifteen').css('outline','none');
+        }
+        if(eighteen_sold === 0){
+            $('#eighteen').prop('disabled', true);
+            $('#eighteen').css('outline','none');
+        }
+        if(ten_sold === 0){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
+        if(twenty_sold === 0){
+            $('#twenty').prop('disabled', true);
+            $('#twenty').css('outline','none');
+        }
+        if(thirty_sold === 0){
+            $('#thirty').prop('disabled', true);
+            $('#thirty').css('outline','none');
+        }
+        if(fifty_sold === 0){
+            $('#fifty').prop('disabled', true);
+            $('#fifty').css('outline','none');
+        }
+        
     });
 
     $('#button_hundred').click(function(){
@@ -38,6 +82,14 @@ $(function(){
         let money_ten = Number($('#money_ten').val());
         let money_thou = Number($('#money_thou').val());
         let money_one = Number($('#money_one').val());
+        let twelve_sold= Number($('#twelve_remain').val());
+        let fourteen_sold= Number($('#fourteen_remain').val());
+        let fifteen_sold= Number($('#fifteen_remain').val());
+        let eighteen_sold= Number($('#eighteen_remain').val());
+        let ten_sold= Number($('#ten_remain').val());
+        let twenty_sold= Number($('#twenty_remain').val());
+        let thirty_sold= Number($('#thirty_remain').val());
+        let fifty_sold= Number($('#fifty_remain').val());
         let total_count = 0;
         if(money_ten_yen > 0){
             money_ten_yen = money_ten_yen - 1;
@@ -62,6 +114,39 @@ $(function(){
             $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
             $('#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty,#fifty').prop('disabled', false);
         }
+
+        if(twelve_sold === 0){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
+        if(fourteen_sold === 0){
+            $('#fourteen').prop('disabled', true);
+            $('#fourteen').css('outline','none');
+        }
+        if(fifteen_sold === 0){
+            $('#fifteen').prop('disabled', true);
+            $('#fifteen').css('outline','none');
+        }
+        if(eighteen_sold === 0){
+            $('#eighteen').prop('disabled', true);
+            $('#eighteen').css('outline','none');
+        }
+        if(ten_sold === 0){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
+        if(twenty_sold === 0){
+            $('#twenty').prop('disabled', true);
+            $('#twenty').css('outline','none');
+        }
+        if(thirty_sold === 0){
+            $('#thirty').prop('disabled', true);
+            $('#thirty').css('outline','none');
+        }
+        if(fifty_sold === 0){
+            $('#fifty').prop('disabled', true);
+            $('#fifty').css('outline','none');
+        }
     });
 
     $('#button_ten').click(function(){
@@ -69,6 +154,14 @@ $(function(){
         let money_thou = Number($('#money_thou').val());
         let money_ten = Number($('#money_ten').val());
         let money_one = Number($('#money_one').val());
+        let twelve_sold= Number($('#twelve_remain').val());
+        let fourteen_sold= Number($('#fourteen_remain').val());
+        let fifteen_sold= Number($('#fifteen_remain').val());
+        let eighteen_sold= Number($('#eighteen_remain').val());
+        let ten_sold= Number($('#ten_remain').val());
+        let twenty_sold= Number($('#twenty_remain').val());
+        let thirty_sold= Number($('#thirty_remain').val());
+        let fifty_sold= Number($('#fifty_remain').val());
         let total_count = 0;
         if(money_one_yen > 0){
             money_one_yen = money_one_yen - 1;
@@ -106,6 +199,39 @@ $(function(){
             $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
             $('#ten,#twelve,#fourteen,#fifteen,#eighteen,#twenty,#thirty,#fifty').prop('disabled', false);
         }
+
+        if(twelve_sold === 0){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
+        if(fourteen_sold === 0){
+            $('#fourteen').prop('disabled', true);
+            $('#fourteen').css('outline','none');
+        }
+        if(fifteen_sold === 0){
+            $('#fifteen').prop('disabled', true);
+            $('#fifteen').css('outline','none');
+        }
+        if(eighteen_sold === 0){
+            $('#eighteen').prop('disabled', true);
+            $('#eighteen').css('outline','none');
+        }
+        if(ten_sold === 0){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
+        if(twenty_sold === 0){
+            $('#twenty').prop('disabled', true);
+            $('#twenty').css('outline','none');
+        }
+        if(thirty_sold === 0){
+            $('#thirty').prop('disabled', true);
+            $('#thirty').css('outline','none');
+        }
+        if(fifty_sold === 0){
+            $('#fifty').prop('disabled', true);
+            $('#fifty').css('outline','none');
+        }
     });
 
 
@@ -122,6 +248,7 @@ $(function(){
             $('#twelve_remain').val(twelve_remain);
             $('#remain_count').val(remain_count);
             $('#side_mituya').text(side_mituya);
+            $('#reset').prop('disabled', false);
             roulette_flag = 0;
             preventDefault();
         }else if(twelve_remain > 0 && buy_count >= 120 && roulette_flag === 0){
@@ -155,6 +282,10 @@ $(function(){
         
 
         let count_yen = Number($('#count').text());
+        if(count_yen < 100){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
         if(count_yen < 120){
             $('#twelve').prop('disabled', true);
             $('#twelve').css('outline','none');
@@ -198,19 +329,55 @@ $(function(){
         let remain_count = Number($('#remain_count').val());
         let side_pon = Number($('#side_pon').text());
         let buy_count = Number($('#count').text());
-        if(fourteen_remain > 0 && buy_count >= 140){
-        fourteen_remain = fourteen_remain - 1;
-        remain_count = remain_count - 1;
-        side_pon = side_pon + 1;
-        buy_count = buy_count - 140;
-        $('#fourteen_remain').val(fourteen_remain);
-        $('#remain_count').val(remain_count);
-        $('#count').val(0);
-        $('#side_pon').text(side_pon);
-        $('#count').text(buy_count);
+
+        if(roulette_flag === 1){
+            fourteen_remain = fourteen_remain - 1;
+            remain_count = remain_count - 1;
+            side_pon = side_pon + 1;
+            $('#fourteen_remain').val(fourteen_remain);
+            $('#remain_count').val(remain_count);
+            $('#side_pon').text(side_pon);
+            $('#reset').prop('disabled', false);
+            roulette_flag = 0;
+            preventDefault();
+        }else if(fourteen_remain > 0 && buy_count >= 140 && roulette_flag === 0){
+                fourteen_remain = fourteen_remain - 1;
+                remain_count = remain_count - 1;
+                side_pon = side_pon + 1;
+                buy_count = buy_count - 140;
+                $('#fourteen_remain').val(fourteen_remain);
+                $('#remain_count').val(remain_count);
+                $('#count').val(0);
+                $('#side_pon').text(side_pon);
+                $('#count').text(buy_count);
+            
         }
+        
+        if(roulette_flag === 0){
+            let buy_roulette = Math.floor( Math.random() * 99 ) + 1;
+            Number($('#roulette_one').text(buy_roulette));
+            if(buy_roulette === 11 || buy_roulette === 22 ||buy_roulette === 33 || buy_roulette === 44 || buy_roulette === 55 || buy_roulette === 66 ||buy_roulette === 77 || buy_roulette === 88 || buy_roulette === 99){
+                roulette_flag = 1;
+                $('#reset').prop('disabled', true);
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
+            }else{
+                roulette_flag = 0;
+                
+            }
+        
+        }
+        
 
         let count_yen = Number($('#count').text());
+        if(count_yen < 100){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
+        if(count_yen < 120){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
         if(count_yen < 140){
             $('#fourteen').prop('disabled', true);
             $('#fourteen').css('outline','none');
@@ -249,19 +416,59 @@ $(function(){
         let remain_count = Number($('#remain_count').val());
         let side_toropi = Number($('#side_toropi').text());
         let buy_count = Number($('#count').text());
-        if(fifteen_remain > 0  && buy_count >= 150){
-        fifteen_remain = fifteen_remain - 1;
-        remain_count = remain_count - 1;
-        side_toropi = side_toropi + 1;
-        buy_count = buy_count - 150;
-        $('#fifteen_remain').val(fifteen_remain);
-        $('#remain_count').val(remain_count);
-        $('#count').val(0);
-        $('#side_toropi').text(side_toropi);
-        $('#count').text(buy_count);
+
+        if(roulette_flag === 1){
+            fifteen_remain = fifteen_remain - 1;
+            remain_count = remain_count - 1;
+            side_pon = side_pon + 1;
+            $('#fifteen_remain').val(fifteen_remain);
+            $('#remain_count').val(remain_count);
+            $('#side_toropi').text(side_toropi);
+            $('#reset').prop('disabled', false);
+            roulette_flag = 0;
+            preventDefault();
+        }else if(fifteen_remain > 0 && buy_count >= 150 && roulette_flag === 0){
+                fifteen_remain = fifteen_remain - 1;
+                remain_count = remain_count - 1;
+                side_toropi = side_toropi + 1;
+                buy_count = buy_count - 150;
+                $('#fifteen_remain').val(fifteen_remain);
+                $('#remain_count').val(remain_count);
+                $('#count').val(0);
+                $('#side_toropi').text(side_toropi);
+                $('#count').text(buy_count);
+            
         }
+        
+        if(roulette_flag === 0){
+            let buy_roulette = Math.floor( Math.random() * 99 ) + 1;
+            Number($('#roulette_one').text(buy_roulette));
+            if(buy_roulette === 11 || buy_roulette === 22 ||buy_roulette === 33 || buy_roulette === 44 || buy_roulette === 55 || buy_roulette === 66 ||buy_roulette === 77 || buy_roulette === 88 || buy_roulette === 99){
+                roulette_flag = 1;
+                $('#reset').prop('disabled', true);
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
+            }else{
+                roulette_flag = 0;
+                
+            }
+        
+        }
+        
 
         let count_yen = Number($('#count').text());
+        if(count_yen < 100){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
+        if(count_yen < 120){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
+        if(count_yen < 140){
+            $('#fourteen').prop('disabled', true);
+            $('#fourteen').css('outline','none');
+        }
         if(count_yen < 150){
             $('#fifteen').prop('disabled', true);
             $('#fifteen').css('outline','none');
@@ -296,19 +503,62 @@ $(function(){
         let remain_count = Number($('#remain_count').val());
         let side_tea = Number($('#side_tea').text());
         let buy_count = Number($('#count').text());
-        if(eighteen_remain > 0 && buy_count >= 180){
-        eighteen_remain = eighteen_remain - 1;
-        remain_count = remain_count - 1;
-        side_tea = side_tea + 1;
-        buy_count = buy_count - 180;
-        $('#eighteen_remain').val(eighteen_remain);
-        $('#remain_count').val(remain_count);
-        $('#count').val(0);
-        $('#side_tea').text(side_tea);
-        $('#count').text(buy_count);
+
+        if(roulette_flag === 1){
+            eighteen_remain = eighteen_remain - 1;
+            remain_count = remain_count - 1;
+            side_tea = side_tea + 1;
+            $('#eighteen_remain').val(eighteen_remain);
+            $('#remain_count').val(remain_count);
+            $('#side_tea').text(side_tea);
+            $('#reset').prop('disabled', false);
+            roulette_flag = 0;
+            preventDefault();
+        }else if(eighteen_remain > 0 && buy_count >= 180 && roulette_flag === 0){
+                eighteen_remain = eighteen_remain - 1;
+                remain_count = remain_count - 1;
+                side_tea = side_tea + 1;
+                buy_count = buy_count - 180;
+                $('#eighteen_remain').val(eighteen_remain);
+                $('#remain_count').val(remain_count);
+                $('#count').val(0);
+                $('#side_tea').text(side_tea);
+                $('#count').text(buy_count);
+            
+        }
+        
+        if(roulette_flag === 0){
+            let buy_roulette = Math.floor( Math.random() * 99 ) + 1;
+            Number($('#roulette_one').text(buy_roulette));
+            if(buy_roulette === 11 || buy_roulette === 22 ||buy_roulette === 33 || buy_roulette === 44 || buy_roulette === 55 || buy_roulette === 66 ||buy_roulette === 77 || buy_roulette === 88 || buy_roulette === 99){
+                roulette_flag = 1;
+                $('#reset').prop('disabled', true);
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
+            }else{
+                roulette_flag = 0;
+                
+            }
+        
         }
 
         let count_yen = Number($('#count').text());
+        if(count_yen < 100){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
+        if(count_yen < 120){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
+        if(count_yen < 140){
+            $('#fourteen').prop('disabled', true);
+            $('#fourteen').css('outline','none');
+        }
+        if(count_yen < 150){
+            $('#fifteen').prop('disabled', true);
+            $('#fifteen').css('outline','none');
+        }
         if(count_yen < 180){
             $('#eighteen').prop('disabled', true);
             $('#eighteen').css('outline','none');
@@ -339,16 +589,43 @@ $(function(){
         let remain_count = Number($('#remain_count').val());
         let side_lemon = Number($('#side_lemon').text());
         let buy_count = Number($('#count').text());
-        if(ten_remain > 0 && buy_count >= 100){
-        ten_remain = ten_remain - 1;
-        remain_count = remain_count - 1;
-        side_lemon = side_lemon + 1;
-        buy_count = buy_count - 100;
-        $('#ten_remain').val(ten_remain);
-        $('#remain_count').val(remain_count);
-        $('#count').val(0);
-        $('#side_lemon').text(side_lemon);
-        $('#count').text(buy_count);
+
+        if(roulette_flag === 1){
+            ten_remain = ten_remain - 1;
+            remain_count = remain_count - 1;
+            side_lemon = side_lemon + 1;
+            $('#ten_remain').val(ten_remain);
+            $('#remain_count').val(remain_count);
+            $('#side_lemon').text(side_lemon);
+            $('#reset').prop('disabled', false);
+            roulette_flag = 0;
+            preventDefault();
+        }else if(ten_remain > 0 && buy_count >= 100 && roulette_flag === 0){
+                ten_remain = ten_remain - 1;
+                remain_count = remain_count - 1;
+                side_lemon = side_lemon + 1;
+                buy_count = buy_count - 100;
+                $('#ten_remain').val(ten_remain);
+                $('#remain_count').val(remain_count);
+                $('#count').val(0);
+                $('#side_lemon').text(side_lemon);
+                $('#count').text(buy_count);
+            
+        }
+        
+        if(roulette_flag === 0){
+            let buy_roulette = Math.floor( Math.random() * 99 ) + 1;
+            Number($('#roulette_one').text(buy_roulette));
+            if(buy_roulette === 11 || buy_roulette === 22 ||buy_roulette === 33 || buy_roulette === 44 || buy_roulette === 55 || buy_roulette === 66 ||buy_roulette === 77 || buy_roulette === 88 || buy_roulette === 99){
+                roulette_flag = 1;
+                $('#reset').prop('disabled', true);
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
+            }else{
+                roulette_flag = 0;
+                
+            }
+        
         }
 
         let count_yen = Number($('#count').text());
@@ -398,19 +675,66 @@ $(function(){
         let remain_count = Number($('#remain_count').val());
         let side_nekuta = Number($('#side_nekuta').text());
         let buy_count = Number($('#count').text());
-        if(twenty_remain > 0 && buy_count >= 200){
-        twenty_remain = twenty_remain - 1;
-        remain_count = remain_count - 1;
-        side_nekuta = side_nekuta + 1;
-        buy_count = buy_count - 200;
-        $('#twenty_remain').val(twenty_remain);
-        $('#remain_count').val(remain_count);
-        $('#count').val(0);
-        $('#side_nekuta').text(side_nekuta);
-        $('#count').text(buy_count);
+
+        if(roulette_flag === 1){
+            twenty_remain = twenty_remain - 1;
+            remain_count = remain_count - 1;
+            side_nekuta = side_nekuta + 1;
+            $('#twenty_remain').val(twenty_remain);
+            $('#remain_count').val(remain_count);
+            $('#side_nekuta').text(side_nekuta);
+            $('#reset').prop('disabled', false);
+            roulette_flag = 0;
+            preventDefault();
+        }else if(twenty_remain > 0 && buy_count >= 200 && roulette_flag === 0){
+                twenty_remain = twenty_remain - 1;
+                remain_count = remain_count - 1;
+                side_nekuta = side_nekuta + 1;
+                buy_count = buy_count - 200;
+                $('#twenty_remain').val(twenty_remain);
+                $('#remain_count').val(remain_count);
+                $('#count').val(0);
+                $('#side_nekuta').text(side_nekuta);
+                $('#count').text(buy_count);
+            
+        }
+        
+        if(roulette_flag === 0){
+            let buy_roulette = Math.floor( Math.random() * 99 ) + 1;
+            Number($('#roulette_one').text(buy_roulette));
+            if(buy_roulette === 11 || buy_roulette === 22 ||buy_roulette === 33 || buy_roulette === 44 || buy_roulette === 55 || buy_roulette === 66 ||buy_roulette === 77 || buy_roulette === 88 || buy_roulette === 99){
+                roulette_flag = 1;
+                $('#reset').prop('disabled', true);
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
+            }else{
+                roulette_flag = 0;
+                
+            }
+        
         }
     
         let count_yen = Number($('#count').text());
+        if(count_yen < 100){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
+        if(count_yen < 120){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
+        if(count_yen < 140){
+            $('#fourteen').prop('disabled', true);
+            $('#fourteen').css('outline','none');
+        }
+        if(count_yen < 150){
+            $('#fifteen').prop('disabled', true);
+            $('#fifteen').css('outline','none');
+        }
+        if(count_yen < 180){
+            $('#eighteen').prop('disabled', true);
+            $('#eighteen').css('outline','none');
+        }
         if(count_yen < 200){
             $('#twenty').prop('disabled', true);
             $('#twenty').css('outline','none');
@@ -437,19 +761,70 @@ $(function(){
         let remain_count = Number($('#remain_count').val());
         let side_cola = Number($('#side_cola').text());
         let buy_count = Number($('#count').text());
-        if(thirty_remain > 0 && buy_count >= 300){
-        thirty_remain = thirty_remain - 1;
-        remain_count = remain_count - 1;
-        side_cola = side_cola + 1;
-        buy_count = buy_count - 300;
-        $('#thirty_remain').val(thirty_remain);
-        $('#remain_count').val(remain_count);
-        $('#count').val(0);
-        $('#side_cola').text(side_cola);
-        $('#count').text(buy_count);
+
+        if(roulette_flag === 1){
+            thirty_remain = thirty_remain - 1;
+            remain_count = remain_count - 1;
+            side_cola = side_cola + 1;
+            $('#thirty_remain').val(thirty_remain);
+            $('#remain_count').val(remain_count);
+            $('#side_cola').text(side_cola);
+            $('#reset').prop('disabled', false);
+            roulette_flag = 0;
+            preventDefault();
+        }else if(thirty_remain > 0 && buy_count >= 300 && roulette_flag === 0){
+                thirty_remain = thirty_remain - 1;
+                remain_count = remain_count - 1;
+                side_cola = side_cola + 1;
+                buy_count = buy_count - 300;
+                $('#thirty_remain').val(thirty_remain);
+                $('#remain_count').val(remain_count);
+                $('#count').val(0);
+                $('#side_cola').text(side_cola);
+                $('#count').text(buy_count);
+            
+        }
+        
+        if(roulette_flag === 0){
+            let buy_roulette = Math.floor( Math.random() * 99 ) + 1;
+            Number($('#roulette_one').text(buy_roulette));
+            if(buy_roulette === 11 || buy_roulette === 22 ||buy_roulette === 33 || buy_roulette === 44 || buy_roulette === 55 || buy_roulette === 66 ||buy_roulette === 77 || buy_roulette === 88 || buy_roulette === 99){
+                roulette_flag = 1;
+                $('#reset').prop('disabled', true);
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
+            }else{
+                roulette_flag = 0;
+                
+            }
+        
         }
     
         let count_yen = Number($('#count').text());
+        if(count_yen < 100){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
+        if(count_yen < 120){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
+        if(count_yen < 140){
+            $('#fourteen').prop('disabled', true);
+            $('#fourteen').css('outline','none');
+        }
+        if(count_yen < 150){
+            $('#fifteen').prop('disabled', true);
+            $('#fifteen').css('outline','none');
+        }
+        if(count_yen < 180){
+            $('#eighteen').prop('disabled', true);
+            $('#eighteen').css('outline','none');
+        }
+        if(count_yen < 200){
+            $('#twenty').prop('disabled', true);
+            $('#twenty').css('outline','none');
+        }
         if(count_yen < 300){
             $('#thirty').prop('disabled', true);
             $('#thirty').css('outline','none');
@@ -472,19 +847,74 @@ $(function(){
         let remain_count = Number($('#remain_count').val());
         let side_pain = Number($('#side_pain').text());
         let buy_count = Number($('#count').text());
-        if(fifty_remain > 0 && buy_count >= 500){
-        fifty_remain = fifty_remain - 1;
-        remain_count = remain_count - 1;
-        side_pain = side_pain + 1;
-        buy_count = buy_count - 500;
-        $('#fifty_remain').val(fifty_remain);
-        $('#remain_count').val(remain_count);
-        $('#count').val(0);
-        $('#side_pain').text(side_pain);
-        $('#count').text(buy_count);
+
+        if(roulette_flag === 1){
+            fifty_remain = fifty_remain - 1;
+            remain_count = remain_count - 1;
+            side_pain = side_pain + 1;
+            $('#fifty_remain').val(fifty_remain);
+            $('#remain_count').val(remain_count);
+            $('#side_pain').text(side_pain);
+            $('#reset').prop('disabled', false);
+            roulette_flag = 0;
+            preventDefault();
+        }else if(fifty_remain > 0 && buy_count >= 500 && roulette_flag === 0){
+                fifty_remain = fifty_remain - 1;
+                remain_count = remain_count - 1;
+                side_pain = side_pain + 1;
+                buy_count = buy_count - 500;
+                $('#fifty_remain').val(fifty_remain);
+                $('#remain_count').val(remain_count);
+                $('#count').val(0);
+                $('#side_pain').text(side_pain);
+                $('#count').text(buy_count);
+            
+        }
+        
+        if(roulette_flag === 0){
+            let buy_roulette = Math.floor( Math.random() * 99 ) + 1;
+            Number($('#roulette_one').text(buy_roulette));
+            if(buy_roulette === 11 || buy_roulette === 22 ||buy_roulette === 33 || buy_roulette === 44 || buy_roulette === 55 || buy_roulette === 66 ||buy_roulette === 77 || buy_roulette === 88 || buy_roulette === 99){
+                roulette_flag = 1;
+                $('#reset').prop('disabled', true);
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').css('outline','1px solid red');
+                $('#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty').prop('disabled', false);
+            }else{
+                roulette_flag = 0;
+                
+            }
+        
         }
     
         let count_yen = Number($('#count').text());
+        if(count_yen < 100){
+            $('#ten').prop('disabled', true);
+            $('#ten').css('outline','none');
+        }
+        if(count_yen < 120){
+            $('#twelve').prop('disabled', true);
+            $('#twelve').css('outline','none');
+        }
+        if(count_yen < 140){
+            $('#fourteen').prop('disabled', true);
+            $('#fourteen').css('outline','none');
+        }
+        if(count_yen < 150){
+            $('#fifteen').prop('disabled', true);
+            $('#fifteen').css('outline','none');
+        }
+        if(count_yen < 180){
+            $('#eighteen').prop('disabled', true);
+            $('#eighteen').css('outline','none');
+        }
+        if(count_yen < 200){
+            $('#twenty').prop('disabled', true);
+            $('#twenty').css('outline','none');
+        }
+        if(count_yen < 300){
+            $('#thirty').prop('disabled', true);
+            $('#thirty').css('outline','none');
+        }
         if(count_yen < 500){
             $('#fifty').prop('disabled', true);
             $('#fifty').css('outline','none');
