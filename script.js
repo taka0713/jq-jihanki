@@ -485,9 +485,6 @@ $(function(){
             $('#fifty').prop('disabled', true);
             $('#fifty').css('outline','none');
          }
-
-        
-
         
 
         if(fourteen_remain === 0){
@@ -614,9 +611,6 @@ $(function(){
             $('#fifty').css('outline','none');
          }
 
-        
-
-        
 
         if(fifteen_remain === 0){
             $('#fifteen').prop('disabled', true);
