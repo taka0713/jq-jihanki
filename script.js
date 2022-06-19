@@ -1,4 +1,6 @@
 $(function () {
+  let roulette_flag = 0;
+
   let twelve_remain;
   let fourteen_remain;
   let fifteen_remain;
@@ -143,8 +145,6 @@ $(function () {
       $("#fifty").css("outline", "none");
     }
   };
-
-  let roulette_flag = 0;
 
   $("#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty").prop(
     "disabled",
