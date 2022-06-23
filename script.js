@@ -159,6 +159,12 @@ $(function () {
     $("#money_fifty").text(total_money);
   });
 
+  $(".money_count").click(function () {
+    let unko = "tinko";
+
+    console.log(unko);
+  });
+
   $("#button_thousand").click(function () {
     let money_thou = Number($("#money_thou").val());
     let money_ten = Number($("#money_ten").val());
