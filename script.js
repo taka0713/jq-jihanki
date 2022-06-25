@@ -20,6 +20,15 @@ $(function () {
   let side_pain;
   let buy_count;
 
+  let twelve_sold;
+  let fourteen_sold;
+  let fifteen_sold;
+  let eighteen_sold;
+  let ten_sold;
+  let twenty_sold;
+  let thirty_sold;
+  let fifty_sold;
+
   let defaultSet = () => {
     twelve_remain = Number($("#twelve_remain").val());
     fourteen_remain = Number($("#fourteen_remain").val());
@@ -77,6 +86,14 @@ $(function () {
   };
 
   let change_sold = () => {
+    twelve_sold = Number($("#twelve_remain").val());
+    fourteen_sold = Number($("#fourteen_remain").val());
+    fifteen_sold = Number($("#fifteen_remain").val());
+    eighteen_sold = Number($("#eighteen_remain").val());
+    ten_sold = Number($("#ten_remain").val());
+    twenty_sold = Number($("#twenty_remain").val());
+    thirty_sold = Number($("#thirty_remain").val());
+    fifty_sold = Number($("#fifty_remain").val());
     if (twelve_sold === 0) {
       $("#twelve").prop("disabled", true);
       $("#twelve").css("outline", "none");
@@ -160,123 +177,11 @@ $(function () {
   });
 
   $(".money_count").click(function () {
-    let unko = "tinko";
-
-    console.log(unko);
-  });
-
-  $("#button_thousand").click(function () {
     let money_thou = Number($("#money_thou").val());
     let money_ten = Number($("#money_ten").val());
     let money_one = Number($("#money_one").val());
     let money_fifty = Number($("#money_fifty").text());
     let count = Number($("#count").text());
-
-    let twelve_sold = Number($("#twelve_remain").val());
-    let fourteen_sold = Number($("#fourteen_remain").val());
-    let fifteen_sold = Number($("#fifteen_remain").val());
-    let eighteen_sold = Number($("#eighteen_remain").val());
-    let ten_sold = Number($("#ten_remain").val());
-    let twenty_sold = Number($("#twenty_remain").val());
-    let thirty_sold = Number($("#thirty_remain").val());
-    let fifty_sold = Number($("#fifty_remain").val());
-
-    if (money_thou > 0) {
-      let total_money = money_thou * 1000 + money_ten * 100 + money_one * 10;
-      money_thou = money_thou - 1;
-      $("#money_thou").val(money_thou);
-      total_money = total_money - 1000;
-      $("#money_fifty").text(total_money);
-      count = count + 1000;
-      $("#count").text(count);
-
-      $(
-        "#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty"
-      ).prop("disabled", false);
-      $("#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty").css(
-        "outline",
-        "1px solid red"
-      );
-    }
-
-    change_sold();
-  });
-
-  $("#button_hundred").click(function () {
-    let money_thou = Number($("#money_thou").val());
-    let money_ten = Number($("#money_ten").val());
-    let money_one = Number($("#money_one").val());
-    let money_fifty = Number($("#money_fifty").text());
-    let count = Number($("#count").text());
-
-    let twelve_sold = Number($("#twelve_remain").val());
-    let fourteen_sold = Number($("#fourteen_remain").val());
-    let fifteen_sold = Number($("#fifteen_remain").val());
-    let eighteen_sold = Number($("#eighteen_remain").val());
-    let ten_sold = Number($("#ten_remain").val());
-    let twenty_sold = Number($("#twenty_remain").val());
-    let thirty_sold = Number($("#thirty_remain").val());
-    let fifty_sold = Number($("#fifty_remain").val());
-
-    if (count <= 100) {
-      $("#ten").css("outline", "1px solid red");
-      $("#ten").prop("disabled", false);
-    } else if (count <= 200) {
-      $("#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen").css(
-        "outline",
-        "1px solid red"
-      );
-      $("#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen").prop(
-        "disabled",
-        false
-      );
-    } else if (count <= 300) {
-      $("#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty").css(
-        "outline",
-        "1px solid red"
-      );
-      $("#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty").prop(
-        "disabled",
-        false
-      );
-    } else if (count >= 500) {
-      $("#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty").css(
-        "outline",
-        "1px solid red"
-      );
-      $(
-        "#ten,#twenty,#twelve,#fourteen,#fifteen,#eighteen,#thirty,#fifty"
-      ).prop("disabled", false);
-    }
-
-    if (money_ten > 0) {
-      let total_money = money_thou * 1000 + money_ten * 100 + money_one * 10;
-      money_ten = money_ten - 1;
-      $("#money_ten").val(money_ten);
-      total_money = total_money - 100;
-      $("#money_fifty").text(total_money);
-      count = count + 100;
-      $("#count").text(count);
-    }
-
-    change_sold();
-  });
-
-  $("#button_ten").click(function () {
-    let money_thou = Number($("#money_thou").val());
-    let money_ten = Number($("#money_ten").val());
-    let money_one = Number($("#money_one").val());
-    let money_fifty = Number($("#money_fifty").text());
-    let count = Number($("#count").text());
-
-    let twelve_sold = Number($("#twelve_remain").val());
-    let fourteen_sold = Number($("#fourteen_remain").val());
-    let fifteen_sold = Number($("#fifteen_remain").val());
-    let eighteen_sold = Number($("#eighteen_remain").val());
-    let ten_sold = Number($("#ten_remain").val());
-    let twenty_sold = Number($("#twenty_remain").val());
-    let thirty_sold = Number($("#thirty_remain").val());
-    let fifty_sold = Number($("#fifty_remain").val());
 
     if (count >= 100 && count < 120) {
       $("#ten").css("outline", "1px solid red");
@@ -323,6 +228,64 @@ $(function () {
         "#ten,#twelve,#fourteen,#fifteen,#eighteen,#twenty,#thirty,#fifty"
       ).prop("disabled", false);
     }
+
+    change_sold();
+  });
+
+  $("#button_thousand").click(function () {
+    let money_thou = Number($("#money_thou").val());
+    let money_ten = Number($("#money_ten").val());
+    let money_one = Number($("#money_one").val());
+    let money_fifty = Number($("#money_fifty").text());
+    let count = Number($("#count").text());
+
+    if (money_thou > 0) {
+      let total_money = money_thou * 1000 + money_ten * 100 + money_one * 10;
+      money_thou = money_thou - 1;
+      $("#money_thou").val(money_thou);
+      total_money = total_money - 1000;
+      $("#money_fifty").text(total_money);
+      count = count + 1000;
+      $("#count").text(count);
+
+      $(
+        "#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty"
+      ).prop("disabled", false);
+      $("#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty").css(
+        "outline",
+        "1px solid red"
+      );
+    }
+
+    change_sold();
+  });
+
+  $("#button_hundred").click(function () {
+    let money_thou = Number($("#money_thou").val());
+    let money_ten = Number($("#money_ten").val());
+    let money_one = Number($("#money_one").val());
+    let money_fifty = Number($("#money_fifty").text());
+    let count = Number($("#count").text());
+
+    if (money_ten > 0) {
+      let total_money = money_thou * 1000 + money_ten * 100 + money_one * 10;
+      money_ten = money_ten - 1;
+      $("#money_ten").val(money_ten);
+      total_money = total_money - 100;
+      $("#money_fifty").text(total_money);
+      count = count + 100;
+      $("#count").text(count);
+    }
+
+    change_sold();
+  });
+
+  $("#button_ten").click(function () {
+    let money_thou = Number($("#money_thou").val());
+    let money_ten = Number($("#money_ten").val());
+    let money_one = Number($("#money_one").val());
+    let money_fifty = Number($("#money_fifty").text());
+    let count = Number($("#count").text());
 
     if (money_one > 0) {
       let total_money = money_thou * 1000 + money_ten * 100 + money_one * 10;
