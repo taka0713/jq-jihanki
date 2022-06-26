@@ -28,7 +28,6 @@ $(function () {
   let twenty_sold;
   let thirty_sold;
   let fifty_sold;
-
   let defaultSet = () => {
     twelve_remain = Number($("#twelve_remain").val());
     fourteen_remain = Number($("#fourteen_remain").val());
@@ -231,8 +230,12 @@ $(function () {
 
     change_sold();
   });
-
+  $(".money_button").click(function () {
+    console.log($(this));
+  });
   $("#button_thousand").click(function () {
+    $(this).attr("class").split(" ")[1];
+    console.log($(this));
     let money_thou = Number($("#money_thou").val());
     let money_ten = Number($("#money_ten").val());
     let money_one = Number($("#money_one").val());
