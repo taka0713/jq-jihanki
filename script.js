@@ -28,6 +28,7 @@ $(function () {
   let twenty_sold;
   let thirty_sold;
   let fifty_sold;
+
   let defaultSet = () => {
     twelve_remain = Number($("#twelve_remain").val());
     fourteen_remain = Number($("#fourteen_remain").val());
