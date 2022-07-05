@@ -236,7 +236,6 @@ $(function () {
   });
   $("#button_thousand").click(function () {
     $(this).attr("class").split(" ")[1];
-    console.log($(this));
     let money_thou = Number($("#money_thou").val());
     let money_ten = Number($("#money_ten").val());
     let money_one = Number($("#money_one").val());
