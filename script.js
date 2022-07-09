@@ -1,6 +1,5 @@
 $(function () {
   let roulette_flag = 0;
-
   let twelve_remain;
   let fourteen_remain;
   let fifteen_remain;
