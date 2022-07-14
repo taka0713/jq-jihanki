@@ -4,7 +4,6 @@ $(function () {
       $("#money_thou").val($("#money_thou").val() - 1);
       $("#money_fifty").text($("#money_fifty").text() - 1000);
       $("#count").text(Number($("#count").text()) + 1000);
-      console.log(typeof $("#count").text());
     }
   });
 
@@ -24,5 +23,17 @@ $(function () {
     }
   });
 
-  $("#twelve").on("click", function () {});
+  $("#twelve").on("click", function () {
+    console.log("unko");
+    if (twelve_remain > 0 && buy_count >= 120) {
+      twelve_remain = twelve_remain - 1;
+      remain_count = remain_count - 1;
+      side_mituya = side_mituya + 1;
+      buy_count = buy_count - 120;
+      $("#twelve_remain").val(twelve_remain - 1);
+      $("#remain_count").val(remain_count - 1);
+      $("#side_mituya").text(side_mituya + 1);
+      $("#count").text(buy_count - 120);
+    }
+  });
 });
