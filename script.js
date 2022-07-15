@@ -24,16 +24,21 @@ $(function () {
   });
 
   $("#twelve").on("click", function () {
-    console.log("unko");
+    twelve_remain = Number($("#twelve_remain").val());
+    buy_count = Number($("#count").text());
+    remain_count = Number($("#remain_count").val());
+    side_mituya = Number($("#side_mituya").text());
+
     if (twelve_remain > 0 && buy_count >= 120) {
       twelve_remain = twelve_remain - 1;
       remain_count = remain_count - 1;
       side_mituya = side_mituya + 1;
+      console.log(side_mituya);
       buy_count = buy_count - 120;
-      $("#twelve_remain").val(twelve_remain - 1);
-      $("#remain_count").val(remain_count - 1);
-      $("#side_mituya").text(side_mituya + 1);
-      $("#count").text(buy_count - 120);
+      $("#twelve_remain").val(twelve_remain);
+      $("#remain_count").val(remain_count);
+      $("#side_mituya").text(side_mituya);
+      $("#count").text(buy_count);
     }
   });
 });
