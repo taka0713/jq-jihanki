@@ -1,4 +1,12 @@
 $(function () {
+  $(".phone_button").on("click", function () {
+    if ($(this).data("id") !== "@") {
+      $("#number_input").text($("#number_input").text() + $(this).data("id"));
+    } else {
+      alert($("#number_input").text() + "に電話をかけます。");
+    }
+  });
+
   $("#button_thousand").on("click", function () {
     if ($("#money_thou").val() > 0) {
       $("#money_thou").val($("#money_thou").val() - 1);
