@@ -1,35 +1,36 @@
 $(function () {
-  $(".phone_button").on("click", function () {
-    if ($(this).data("id") !== "@") {
-      $("#number_input").text($("#number_input").text() + $(this).data("id"));
-    } else {
-      alert($("#number_input").text() + "に電話をかけます。");
+  $(".money_button").on("click", function () {
+    if ($(this).val() > 0) {
+      $(this).val($(this).val() - 1);
+      $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
+      $("#count").text(Number($("#count").text()) + $(this).data("money"));
     }
+    console.log($(this).data("money"));
   });
 
-  $("#button_thousand").on("click", function () {
-    if ($("#money_thou").val() > 0) {
-      $("#money_thou").val($("#money_thou").val() - 1);
-      $("#money_fifty").text($("#money_fifty").text() - 1000);
-      $("#count").text(Number($("#count").text()) + 1000);
-    }
-  });
+  // $("#button_thousand").on("click", function () {
+  //   if ($("#money_thou").val() > 0) {
+  //     $("#money_thou").val($("#money_thou").val() - 1);
+  //     $("#money_fifty").text($("#money_fifty").text() - 1000);
+  //     $("#count").text(Number($("#count").text()) + 1000);
+  //   }
+  // });
 
-  $("#button_hundred").on("click", function () {
-    if ($("#money_ten").val() > 0) {
-      $("#money_ten").val($("#money_ten").val() - 1);
-      $("#money_fifty").text($("#money_fifty").text() - 100);
-      $("#count").text(Number($("#count").text()) + 100);
-    }
-  });
+  // $("#button_hundred").on("click", function () {
+  //   if ($("#money_ten").val() > 0) {
+  //     $("#money_ten").val($("#money_ten").val() - 1);
+  //     $("#money_fifty").text($("#money_fifty").text() - 100);
+  //     $("#count").text(Number($("#count").text()) + 100);
+  //   }
+  // });
 
-  $("#button_ten").on("click", function () {
-    if ($("#money_one").val() > 0) {
-      $("#money_one").val($("#money_one").val() - 1);
-      $("#money_fifty").text($("#money_fifty").text() - 10);
-      $("#count").text(Number($("#count").text()) + 10);
-    }
-  });
+  // $("#button_ten").on("click", function () {
+  //   if ($("#money_one").val() > 0) {
+  //     $("#money_one").val($("#money_one").val() - 1);
+  //     $("#money_fifty").text($("#money_fifty").text() - 10);
+  //     $("#count").text(Number($("#count").text()) + 10);
+  //   }
+  // });
 
   $("#twelve").on("click", function () {
     twelve_remain = Number($("#twelve_remain").val());
@@ -41,7 +42,7 @@ $(function () {
       twelve_remain = twelve_remain - 1;
       remain_count = remain_count - 1;
       side_mituya = side_mituya + 1;
-      console.log(side_mituya);
+
       buy_count = buy_count - 120;
       $("#twelve_remain").val(twelve_remain);
       $("#remain_count").val(remain_count);

@@ -1,172 +1,171 @@
-header{
-    display: flex;
-    
+header {
+  display: flex;
 }
 
-.wrapper{
-    padding: 10px;
-    width: 400px;
-    height: 600px;
-    margin-bottom: 10px;
-    border: 5px solid #333333;
-    background-color: #baf7ec;
+.wrapper {
+  padding: 10px;
+  width: 400px;
+  height: 600px;
+  margin-bottom: 10px;
+  border: 5px solid #333333;
+  background-color: #baf7ec;
 }
 
-.roule{
-    width: 15px;
+.roule {
+  width: 15px;
 }
 
-.juice_top{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.juice_top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-img{
-    object-fit: cover;
-    width: 40px;
-    height: 60px;
+img {
+  object-fit: cover;
+  width: 40px;
+  height: 60px;
 }
 
-.button_one{
-    display: flex;
-    justify-content: center;
+.button_one {
+  display: flex;
+  justify-content: center;
 }
 
-.button_two{
-    display: flex;
-    justify-content: center;
+.button_two {
+  display: flex;
+  justify-content: center;
 }
 
-.juice_button{
-    margin: 0 auto;
+.juice_button {
+  margin: 0 auto;
 }
 
-.juice_bottom{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.juice_bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.quantity_one{
-    display: flex;
-    justify-content: center;
+.quantity_one {
+  display: flex;
+  justify-content: center;
 }
 
-.quantity_two{
-    display: flex;
-    justify-content: center;
+.quantity_two {
+  display: flex;
+  justify-content: center;
 }
 
-.remaining{
-    width: 30px;
-    margin: 20px;
+.remaining {
+  width: 30px;
+  margin: 20px;
 }
 
-.juice_one{
-    width: 40px;
-    height: 60px;
-    margin: 20px;
-    border: 1px solid #333333;
+.juice_one {
+  width: 40px;
+  height: 60px;
+  margin: 20px;
+  border: 1px solid #333333;
 }
 
-.juice_two{
-    width: 40px;
-    height: 60px;
-    margin: 20px;
-    border: 1px solid #333333;
+.juice_two {
+  width: 40px;
+  height: 60px;
+  margin: 20px;
+  border: 1px solid #333333;
 }
 
-.juice_three{
-    width: 40px;
-    height: 60px;
-    margin: 20px;
-    border: 1px solid #333333;
+.juice_three {
+  width: 40px;
+  height: 60px;
+  margin: 20px;
+  border: 1px solid #333333;
 }
 
-.juice_four{
-    width: 40px;
-    height: 60px;
-    margin: 20px;
-    border: 1px solid #333333;
+.juice_four {
+  width: 40px;
+  height: 60px;
+  margin: 20px;
+  border: 1px solid #333333;
 }
 
-.juice_five{
-    width: 40px;
-    height: 60px;
-    margin: 20px;
-    border: 1px solid #333333;
+.juice_five {
+  width: 40px;
+  height: 60px;
+  margin: 20px;
+  border: 1px solid #333333;
 }
 
-.juice_six{
-    width: 40px;
-    height: 60px;
-    margin: 20px;
-    border: 1px solid #333333;
+.juice_six {
+  width: 40px;
+  height: 60px;
+  margin: 20px;
+  border: 1px solid #333333;
 }
 
-.juice_seven{
-    width: 40px;
-    height: 60px;
-    margin: 20px;
-    border: 1px solid #333333;
+.juice_seven {
+  width: 40px;
+  height: 60px;
+  margin: 20px;
+  border: 1px solid #333333;
 }
 
-.juice_eight{
-    width: 40px;
-    height: 60px;
-    margin: 20px;
-    border: 1px solid #333333;
+.juice_eight {
+  width: 40px;
+  height: 60px;
+  margin: 20px;
+  border: 1px solid #333333;
 }
 
-.money{
-    display: flex;
-    justify-content: center;
+.money {
+  display: flex;
+  justify-content: center;
 }
 
-.money_count{
-    width: 50px;
-    margin: auto 20px;
+.money_count {
+  width: 50px;
+  margin: auto 20px;
 }
 
-.money_reset{
-    height: 25px;
-    margin: auto 20px;
+.money_reset {
+  height: 25px;
+  margin: auto 20px;
 }
 
-.money_input{
-    width: 30px;
-    height: 30px;
-    margin: auto 20px;
-    border: 1px solid #333333;
-    border-radius: 50%;
-    background-color: white;
+.money_input {
+  width: 30px;
+  height: 30px;
+  margin: auto 20px;
+  border: 1px solid #333333;
+  border-radius: 50%;
+  background-color: white;
 }
 
-.take_out{
-    width: 300px;
-    height: 60px;
-    border: 1px solid #333333;
-    margin: 0 auto;
-    background-color: white;
+.take_out {
+  width: 300px;
+  height: 60px;
+  border: 1px solid #333333;
+  margin: 0 auto;
+  background-color: white;
 }
 
-.container{
-    width: 300px;
-    height: 500px;
-    border: 3px solid #333333;
+.container {
+  width: 300px;
+  height: 500px;
+  border: 3px solid #333333;
 }
 
-.money_button{
-    width: 40px;
-    height: 20px;
-    margin-left: 10px;
+.money_button {
+  width: 40px;
+  height: 20px;
+  margin-left: 10px;
 }
 
-.side_count{
-    margin: 0 10px;
+.side_count {
+  margin: 0 10px;
 }
 
-.first_time{
-    width: 100px;
+.first_time {
+  width: 100px;
 }
