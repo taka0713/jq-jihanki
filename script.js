@@ -1,40 +1,18 @@
 $(function () {
   $(".money_button").on("click", function () {
-    if ($(this).val() > 0) {
-      $(this).val($(this).val() - 1);
+    if ($(this).prev("input").val() > 0) {
+      $(this)
+        .prev("input")
+        .val($(this).prev("input").val() - 1);
       $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
       $("#count").text(Number($("#count").text()) + $(this).data("money"));
     }
-    console.log($(this).data("money"));
   });
 
-  // $("#button_thousand").on("click", function () {
-  //   if ($("#money_thou").val() > 0) {
-  //     $("#money_thou").val($("#money_thou").val() - 1);
-  //     $("#money_fifty").text($("#money_fifty").text() - 1000);
-  //     $("#count").text(Number($("#count").text()) + 1000);
-  //   }
-  // });
-
-  // $("#button_hundred").on("click", function () {
-  //   if ($("#money_ten").val() > 0) {
-  //     $("#money_ten").val($("#money_ten").val() - 1);
-  //     $("#money_fifty").text($("#money_fifty").text() - 100);
-  //     $("#count").text(Number($("#count").text()) + 100);
-  //   }
-  // });
-
-  // $("#button_ten").on("click", function () {
-  //   if ($("#money_one").val() > 0) {
-  //     $("#money_one").val($("#money_one").val() - 1);
-  //     $("#money_fifty").text($("#money_fifty").text() - 10);
-  //     $("#count").text(Number($("#count").text()) + 10);
-  //   }
-  // });
-
-  $("#twelve").on("click", function () {
+  $(".juice_button").on("click", function () {
     twelve_remain = Number($("#twelve_remain").val());
     buy_count = Number($("#count").text());
+    console.log(buy_count);
     remain_count = Number($("#remain_count").val());
     side_mituya = Number($("#side_mituya").text());
 
