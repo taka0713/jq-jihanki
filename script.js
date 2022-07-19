@@ -16,7 +16,7 @@ $(function () {
     remain_count = Number($("#remain_count").val());
     side_mituya = Number($("#side_mituya").text());
 
-    if (twelve_remain > 0 && buy_count >= 120) {
+    if ($(this).prev("input").val() > 0 && $("#count").text() >= 120) {
       twelve_remain = twelve_remain - 1;
       remain_count = remain_count - 1;
       side_mituya = side_mituya + 1;
