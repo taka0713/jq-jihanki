@@ -28,6 +28,7 @@ $(function () {
     //   remain_count = remain_count - 1;
     //   side_mituya = side_mituya + 1;
     //   buy_count = buy_count - 120;
+
     //   $("#twelve_remain").val(twelve_remain);
     //   $("#remain_count").val(remain_count);
     //   $("#side_mituya").text(side_mituya);
