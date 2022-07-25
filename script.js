@@ -18,6 +18,11 @@ $(function () {
       $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
       $("#count").text(Number($("#count").text()) + $(this).data("money"));
     }
+    $(".juice_button").map(function () {
+      if ($("#count").text() >= $(this).data("price")) {
+        $(this).prop("disabled", false);
+      }
+    });
   });
 
   $(".juice_button").on("click", function () {
@@ -34,9 +39,17 @@ $(function () {
         Number($(rensou[$(this).prop("id")]).text()) + 1
       );
     }
-    if ($($(this).prop("id") + "_remain").val() === 0) {
-      $(this).prop("id").text("売り切れ");
+
+    if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+      $(this).text("売り切れ");
+      $(this).prop("disabled", true);
     }
+    $(".juice_button").map(function () {
+      if ($("#count").text() <= $(this).data("price")) {
+        $(this).prop("disabled", true);
+        console.log("unp");
+      }
+    });
   });
   $("#button_first").on("click", function () {
     $(".all_reset").map(function () {
