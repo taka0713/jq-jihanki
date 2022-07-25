@@ -10,6 +10,8 @@ $(function () {
     fifty: "#side_pain",
   };
 
+  let juice_price = () => {};
+
   $(".money_button").on("click", function () {
     if ($(this).prev("input").val() > 0) {
       $(this)
@@ -23,6 +25,7 @@ $(function () {
         $(this).prop("disabled", false);
       }
     });
+    juice_price();
   });
 
   $(".juice_button").on("click", function () {
@@ -47,8 +50,8 @@ $(function () {
     $(".juice_button").map(function () {
       if ($("#count").text() <= $(this).data("price")) {
         $(this).prop("disabled", true);
-        console.log("unp");
       }
+      juice_price();
     });
   });
   $("#button_first").on("click", function () {
