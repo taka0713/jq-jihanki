@@ -10,7 +10,19 @@ $(function () {
     fifty: "#side_pain",
   };
 
-  let juice_price = () => {};
+  let juice_price = () => {
+    $(".juice_button").map(function () {
+      if ($("#count").text() >= $(this).data("price")) {
+        $(this).prop("disabled", false);
+      }
+    });
+    $(".juice_button").map(function () {
+      if ($("#count").text() <= $(this).data("price")) {
+        $(this).prop("disabled", true);
+      }
+    });
+    console.log();
+  };
 
   $(".money_button").on("click", function () {
     if ($(this).prev("input").val() > 0) {
@@ -20,11 +32,7 @@ $(function () {
       $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
       $("#count").text(Number($("#count").text()) + $(this).data("money"));
     }
-    $(".juice_button").map(function () {
-      if ($("#count").text() >= $(this).data("price")) {
-        $(this).prop("disabled", false);
-      }
-    });
+
     juice_price();
   });
 
@@ -47,12 +55,8 @@ $(function () {
       $(this).text("売り切れ");
       $(this).prop("disabled", true);
     }
-    $(".juice_button").map(function () {
-      if ($("#count").text() <= $(this).data("price")) {
-        $(this).prop("disabled", true);
-      }
-      juice_price();
-    });
+
+    juice_price();
   });
   $("#button_first").on("click", function () {
     $(".all_reset").map(function () {
