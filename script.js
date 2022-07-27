@@ -21,7 +21,6 @@ $(function () {
         $(this).prop("disabled", true);
       }
     });
-    console.log();
   };
 
   $(".money_button").on("click", function () {
