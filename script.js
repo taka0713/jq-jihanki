@@ -31,6 +31,7 @@ $(function () {
       $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
       $("#count").text(Number($("#count").text()) + $(this).data("money"));
     }
+
     juice_price();
   });
 
@@ -53,6 +54,7 @@ $(function () {
       $(this).text("売り切れ");
       $(this).prop("disabled", true);
     }
+
     juice_price();
   });
   $("#button_first").on("click", function () {
