@@ -12,14 +12,7 @@ $(function () {
 
   let juice_price = () => {
     $(".juice_button").map(function () {
-      if ($("#count").text() >= $(this).data("price")) {
-        $(this).prop("disabled", false);
-      }
-    });
-    $(".juice_button").map(function () {
-      if ($("#count").text() <= $(this).data("price")) {
-        $(this).prop("disabled", true);
-      }
+      $(this).prop("disabled", $("#count").text() < $(this).data("price"));
     });
   };
 
@@ -53,6 +46,22 @@ $(function () {
     if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
       $(this).text("売り切れ");
       $(this).prop("disabled", true);
+    }
+
+    // 1〜99の範囲でランダムな数値を作成
+    let random = Math.floor(Math.random() * 99) + 1;
+    $("#roulette_one").text(random);
+    if (
+      $("#roulette_one").text() === 11 ||
+      22 ||
+      33 ||
+      44 ||
+      55 ||
+      66 ||
+      77 ||
+      88 ||
+      99
+    ) {
     }
 
     juice_price();
