@@ -1,4 +1,7 @@
 $(function () {
+  let roulette_flag = 0;
+  let random = 0;
+
   const rensou = {
     twelve: "#side_mituya",
     fourteen: "#side_pon",
@@ -13,6 +16,9 @@ $(function () {
   let juice_price = () => {
     $(".juice_button").map(function () {
       $(this).prop("disabled", $("#count").text() < $(this).data("price"));
+      if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+        $(this).prop("disabled", true);
+      }
     });
   };
 
@@ -36,7 +42,9 @@ $(function () {
       let stock = $("#" + $(this).prop("id") + "_remain").val();
       $("#" + $(this).prop("id") + "_remain").val(stock - 1);
       Number($("#remain_count").val($("#remain_count").val() - 1));
-      $("#count").text($("#count").text() - $(this).data("price"));
+      if (roulette_flag === 0) {
+        $("#count").text($("#count").text() - $(this).data("price"));
+      }
 
       $(rensou[$(this).prop("id")]).text(
         Number($(rensou[$(this).prop("id")]).text()) + 1
@@ -48,23 +56,41 @@ $(function () {
       $(this).prop("disabled", true);
     }
 
+    juice_price();
+
     // 1〜99の範囲でランダムな数値を作成
-    let random = Math.floor(Math.random() * 99) + 1;
-    $("#roulette_one").text(random);
-    if (
-      $("#roulette_one").text() === 11 ||
-      22 ||
-      33 ||
-      44 ||
-      55 ||
-      66 ||
-      77 ||
-      88 ||
-      99
-    ) {
+    if (roulette_flag === 0) {
+      random = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(random);
+      if (
+        random === 11 ||
+        random === 22 ||
+        random === 33 ||
+        random === 44 ||
+        random === 55 ||
+        random === 66 ||
+        random === 77 ||
+        random === 88 ||
+        random === 99
+      ) {
+        roulette_flag = 1;
+        if ($("#" + $(this).prop("id") + "_remain").val() > 0) {
+          $(this).prop("disabled", false);
+          console.log();
+        } else {
+          $(this).prop("disabled", true);
+        }
+      }
+    } else {
+      $("#roulette").text(0);
+      roulette_flag = 0;
     }
 
-    juice_price();
+    //当たった時、残数が1以上の時に入ってる
+    //金額を減らさない
+    //全てのジュースから1本選択できる
+    //ルーレットは回さない
+    //flag0の状態に戻す
   });
   $("#button_first").on("click", function () {
     $(".all_reset").map(function () {
