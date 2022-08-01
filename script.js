@@ -76,7 +76,6 @@ $(function () {
         roulette_flag = 1;
         if ($("#" + $(this).prop("id") + "_remain").val() > 0) {
           $(this).prop("disabled", false);
-          console.log();
         } else {
           $(this).prop("disabled", true);
         }
@@ -85,7 +84,6 @@ $(function () {
       $("#roulette").text(0);
       roulette_flag = 0;
     }
-
     //当たった時、残数が1以上の時に入ってる
     //金額を減らさない
     //全てのジュースから1本選択できる
