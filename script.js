@@ -75,9 +75,12 @@ $(function () {
       ) {
         roulette_flag = 1;
         if ($("#" + $(this).prop("id") + "_remain").val() > 0) {
-          $(this).prop("disabled", false);
-        } else {
-          $(this).prop("disabled", true);
+          $(".juice_button").map(function () {
+            $(this).prop("disabled", false);
+            if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+              $(this).prop("disabled", true);
+            }
+          });
         }
       }
     } else {
