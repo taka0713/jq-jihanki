@@ -2,6 +2,8 @@ $(function () {
   let roulette_flag = 0;
   let random = 0;
 
+  const roulette_hit = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+
   const rensou = {
     twelve: "#side_mituya",
     fourteen: "#side_pon",
