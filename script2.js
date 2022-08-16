@@ -231,7 +231,6 @@
 //   change_sold();
 // });
 // $(".money_button").click(function () {
-//   console.log($(this));
 // });
 // $("#button_thousand").click(function () {
 //   $(this).attr("class").split(" ")[1];

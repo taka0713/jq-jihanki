@@ -1,6 +1,13 @@
 $(function () {
+  console.log("hoge");
   $(".money_button").on("click", function () {
-    $(this).console.log("hoge");
+    if ($("#money_fifty").text() > 0 && $(".money_remain").val() > 0) {
+      $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
+      $(".money_remain").val($(".money_remain").val() - 1);
+      Number($("#count").text($("#count").text() + $(this).data("money")));
+    }
+    if ($("#count").text() > 0) {
+    }
   });
   $("").on("click", function () {});
 });
