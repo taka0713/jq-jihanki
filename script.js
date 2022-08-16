@@ -1,11 +1,7 @@
 $(function () {
   $(".money_button").on("click", function () {
-    console.log("hoge");
-    if ($(".money_remain").val() > 0) {
-    }
+    $(this).console.log("hoge");
   });
-
-  $("").on("click", function () {});
   $("").on("click", function () {});
 });
 
