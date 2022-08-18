@@ -259,6 +259,52 @@ $(function () {
     }
   });
 
+  $("#reset").on("click", function () {
+    $("#count").text(0);
+    $("#money_fifty").text(money_fifty);
+    $("#money_thou").val(money_thou);
+    $("#money_ten").val(money_ten);
+    $("#money_one").val(money_one);
+  });
+
+  $("#button_first").on("click", function () {
+    $("#count").text(0);
+    $("#money_fifty").text(5000);
+    $("#money_thou").val(4);
+    $("#money_ten").val(9);
+    $("#money_one").val(10);
+    $("#remain_count").val(80);
+    $("#twelve_remain").val(10);
+    $("#fourteen_remain").val(10);
+    $("#fifteen_remain").val(10);
+    $("#eighteen_remain").val(10);
+    $("#ten_remain").val(10);
+    $("#twenty_remain").val(10);
+    $("#thirty_remain").val(10);
+    $("#fifty_remain").val(10);
+    $("#twelve").text("120円");
+    $("#fourteen").text("140円");
+    $("#fifteen").text("150円");
+    $("#eighteen").text("180円");
+    $("#ten").text("100円");
+    $("#twenty").text("200円");
+    $("#thirty").text("300円");
+    $("#fifty").text("500円");
+    $("#side_mituya").text(0);
+    $("#side_pon").text(0);
+    $("#side_toropi").text(0);
+    $("#side_tea").text(0);
+    $("#side_lemon").text(0);
+    $("#side_nekuta").text(0);
+    $("#side_cola").text(0);
+    $("#side_pain").text(0);
+    $("#roulette_one").text(0);
+    $("#twelve,#fourteen,#fifteen,#eighteen,#ten,#twenty,#thirty,#fifty").prop(
+      "disabled",
+      true
+    );
+  });
+
   // const button_light = {
   //   "#twelve": 120,
   //   "#fourteen": 140,
