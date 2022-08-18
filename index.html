@@ -26,10 +26,30 @@
         自販機
 
         <div class="quantity_one">
-          <label><input type="text" /></label>
-          <label><input type="text" /></label>
-          <label><input type="text" /></label>
-          <label><input type="text" /></label>
+          <label
+            ><input type="text" id="twelve_remain" value="10" class="juice_one"
+          /></label>
+          <label
+            ><input
+              type="text"
+              id="fourteen_remain"
+              value="10"
+              class="juice_one"
+          /></label>
+          <label
+            ><input
+              type="text"
+              id="fifteen_remain"
+              value="10"
+              class="juice_one"
+          /></label>
+          <label
+            ><input
+              type="text"
+              id="eighteen_remain"
+              value="10"
+              class="juice_one"
+          /></label>
         </div>
         <div class="juice_top">
           <div class="juice_one">
@@ -46,18 +66,32 @@
           </div>
         </div>
         <div class="button_one">
-          <button type="button" id="twelve">120円</button>
-          <button type="button" id="fourteen">140円</button>
-          <button type="button" id="fifteen">150円</button>
-          <button type="button" id="eighteen">180円</button>
+          <button type="button" id="twelve" class="juice_button all_reset">
+            120円
+          </button>
+          <button type="button" id="fourteen" class="juice_button all_reset">
+            140円
+          </button>
+          <button type="button" id="fifteen" class="juice_button all_reset">
+            150円
+          </button>
+          <button type="button" id="eighteen" class="juice_button all_reset">
+            180円
+          </button>
         </div>
         <div class="quantity_two">
           <label>
-            <input type="text" id="ten_remain" />
+            <input type="text" id="ten_remain" value="10" class="juice_one" />
           </label>
-          <label><input type="text" id="twenty_remain" /></label>
-          <label><input type="text" id="thirty_remain" /></label>
-          <label><input type="text" id="fifty_remain" /></label>
+          <label
+            ><input type="text" id="twenty_remain" value="10" class="juice_one"
+          /></label>
+          <label
+            ><input type="text" id="thirty_remain" value="10" class="juice_one"
+          /></label>
+          <label
+            ><input type="text" id="fifty_remain" value="10" class="juice_one"
+          /></label>
         </div>
         <div class="juice_bottom">
           <div class="juice_five">
@@ -77,16 +111,21 @@
           <button
             type="button"
             id="ten"
-            disabled="true"
             data-price="100"
             class="juice_button all_reset"
             data-default="100円"
           >
             100円
           </button>
-          <button type="button" id="twenty">200円</button>
-          <button type="button" id="thirty">300円</button>
-          <button type="button" id="fifty">500円</button>
+          <button type="button" id="twenty" class="juice_button all_reset">
+            200円
+          </button>
+          <button type="button" id="thirty" class="juice_button all_reset">
+            300円
+          </button>
+          <button type="button" id="fifty" class="juice_button all_reset">
+            500円
+          </button>
         </div>
         <div class="money">
           <div><span id="count" class="money_count">0</span>円</div>
@@ -100,7 +139,7 @@
       </div>
       <div class="container">
         <div class="remaining_juice">
-          <p>残り<input type="text" id="remain_count" />本</p>
+          <p>残り<input type="text" value="80" id="remain_count" />本</p>
           <div>
             財布
             <span id="money_fifty">5000</span>円
@@ -131,7 +170,7 @@
               type="button"
               data-money="100"
               id="button_hundred"
-              class="money_button"
+              class="money_button money_ten"
             >
               百
             </button>
@@ -146,7 +185,7 @@
               type="button"
               data-money="10"
               id="button_ten"
-              class="money_button"
+              class="money_button money_one"
             >
               十
             </button>
