@@ -138,32 +138,29 @@ $(function () {
       $("#twelve").text("売り切れ");
       $("#twelve").prop("disabled", true);
     }
+    if (roulette_flag === 0) {
+      let roulette_number = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(roulette_number);
+      if (
+        roulette_number === 11 ||
+        roulette_number === 22 ||
+        roulette_number === 33 ||
+        roulette_number === 44 ||
+        roulette_number === 55 ||
+        roulette_number === 66 ||
+        roulette_number === 77 ||
+        roulette_number === 88 ||
+        roulette_number === 99
+      ) {
+        roulette_flag = 1;
 
-    let roulette_number = Math.floor(Math.random() * 99) + 1;
-    $("#roulette").text(roulette_number);
-    if (
-      roulette_number === 11 ||
-      roulette_number === 22 ||
-      roulette_number === 33 ||
-      roulette_number === 44 ||
-      roulette_number === 55 ||
-      roulette_number === 66 ||
-      roulette_number === 77 ||
-      roulette_number === 88 ||
-      roulette_number === 99
-    ) {
-      roulette_flag = 1;
-
-      $(".juice_button").map(function () {
-        if ($(".juice_button").val() >= 1) {
-          $(this).prop("disabled", false);
-          if (roulette_flag === 1) {
-            $("#twelve_remain").val($("#twelve_remain").val() - 1);
-            $("#side_mituya").text(Number($("#side_mituya").text()) + 1);
-            $("#remain_count").val($("#remain_count").val() - 1);
+        $(".juice_button").map(function () {
+          if ($(".juice_button").val() >= 1) {
+            $(this).prop("disabled", false);
           }
-        }
-      });
+        });
+      }
+    } else {
       roulette_flag = 0;
     }
   });
@@ -173,11 +170,38 @@ $(function () {
       $("#fourteen_remain").val($("#fourteen_remain").val() - 1);
       $("#side_pon").text(Number($("#side_pon").text()) + 1);
       $("#remain_count").val($("#remain_count").val() - 1);
-      $("#count").text(Number($("#count").text()) - 140);
+      if (roulette_flag === 0) {
+        $("#count").text(Number($("#count").text()) - 140);
+      }
     }
     if (Number($("#fourteen_remain").val()) === 0) {
       $("#fourteen").text("売り切れ");
       $("#fourteen").prop("disabled", true);
+    }
+    if (roulette_flag === 0) {
+      let roulette_number = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(roulette_number);
+      if (
+        roulette_number === 11 ||
+        roulette_number === 22 ||
+        roulette_number === 33 ||
+        roulette_number === 44 ||
+        roulette_number === 55 ||
+        roulette_number === 66 ||
+        roulette_number === 77 ||
+        roulette_number === 88 ||
+        roulette_number === 99
+      ) {
+        roulette_flag = 1;
+
+        $(".juice_button").map(function () {
+          if ($(".juice_button").val() >= 1) {
+            $(this).prop("disabled", false);
+          }
+        });
+      }
+    } else {
+      roulette_flag = 0;
     }
   });
 
@@ -186,11 +210,39 @@ $(function () {
       $("#fifteen_remain").val($("#fifteen_remain").val() - 1);
       $("#side_toropi").text(Number($("#side_toropi").text()) + 1);
       $("#remain_count").val($("#remain_count").val() - 1);
-      $("#count").text(Number($("#count").text()) - 150);
+
+      if (roulette_flag === 0) {
+        $("#count").text(Number($("#count").text()) - 150);
+      }
     }
     if (Number($("#fifteen_remain").val()) === 0) {
       $("#fifteen").text("売り切れ");
       $("#fifteen").prop("disabled", true);
+    }
+    if (roulette_flag === 0) {
+      let roulette_number = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(roulette_number);
+      if (
+        roulette_number === 11 ||
+        roulette_number === 22 ||
+        roulette_number === 33 ||
+        roulette_number === 44 ||
+        roulette_number === 55 ||
+        roulette_number === 66 ||
+        roulette_number === 77 ||
+        roulette_number === 88 ||
+        roulette_number === 99
+      ) {
+        roulette_flag = 1;
+
+        $(".juice_button").map(function () {
+          if ($(".juice_button").val() >= 1) {
+            $(this).prop("disabled", false);
+          }
+        });
+      }
+    } else {
+      roulette_flag = 0;
     }
   });
 
@@ -199,11 +251,38 @@ $(function () {
       $("#eighteen_remain").val($("#eighteen_remain").val() - 1);
       $("#side_tea").text(Number($("#side_tea").text()) + 1);
       $("#remain_count").val($("#remain_count").val() - 1);
-      $("#count").text(Number($("#count").text()) - 180);
+      if (roulette_flag === 0) {
+        $("#count").text(Number($("#count").text()) - 180);
+      }
     }
     if (Number($("#eighteen_remain").val()) === 0) {
       $("#eighteen").text("売り切れ");
       $("#eighteen").prop("disabled", true);
+    }
+    if (roulette_flag === 0) {
+      let roulette_number = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(roulette_number);
+      if (
+        roulette_number === 11 ||
+        roulette_number === 22 ||
+        roulette_number === 33 ||
+        roulette_number === 44 ||
+        roulette_number === 55 ||
+        roulette_number === 66 ||
+        roulette_number === 77 ||
+        roulette_number === 88 ||
+        roulette_number === 99
+      ) {
+        roulette_flag = 1;
+
+        $(".juice_button").map(function () {
+          if ($(".juice_button").val() >= 1) {
+            $(this).prop("disabled", false);
+          }
+        });
+      }
+    } else {
+      roulette_flag = 0;
     }
   });
 
@@ -212,11 +291,38 @@ $(function () {
       $("#ten_remain").val($("#ten_remain").val() - 1);
       $("#side_lemon").text(Number($("#side_lemon").text()) + 1);
       $("#remain_count").val($("#remain_count").val() - 1);
-      $("#count").text(Number($("#count").text()) - 100);
+      if (roulette_flag === 0) {
+        $("#count").text(Number($("#count").text()) - 100);
+      }
     }
     if (Number($("#ten_remain").val()) === 0) {
       $("#ten").text("売り切れ");
       $("#ten").prop("disabled", true);
+    }
+    if (roulette_flag === 0) {
+      let roulette_number = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(roulette_number);
+      if (
+        roulette_number === 11 ||
+        roulette_number === 22 ||
+        roulette_number === 33 ||
+        roulette_number === 44 ||
+        roulette_number === 55 ||
+        roulette_number === 66 ||
+        roulette_number === 77 ||
+        roulette_number === 88 ||
+        roulette_number === 99
+      ) {
+        roulette_flag = 1;
+
+        $(".juice_button").map(function () {
+          if ($(".juice_button").val() >= 1) {
+            $(this).prop("disabled", false);
+          }
+        });
+      }
+    } else {
+      roulette_flag = 0;
     }
   });
 
@@ -225,11 +331,38 @@ $(function () {
       $("#twenty_remain").val($("#twenty_remain").val() - 1);
       $("#side_nekuta").text(Number($("#side_nekuta").text()) + 1);
       $("#remain_count").val($("#remain_count").val() - 1);
-      $("#count").text(Number($("#count").text()) - 200);
+      if (roulette_flag === 0) {
+        $("#count").text(Number($("#count").text()) - 200);
+      }
     }
     if (Number($("#twenty_remain").val()) === 0) {
       $("#twenty").text("売り切れ");
       $("#twenty").prop("disabled", true);
+    }
+    if (roulette_flag === 0) {
+      let roulette_number = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(roulette_number);
+      if (
+        roulette_number === 11 ||
+        roulette_number === 22 ||
+        roulette_number === 33 ||
+        roulette_number === 44 ||
+        roulette_number === 55 ||
+        roulette_number === 66 ||
+        roulette_number === 77 ||
+        roulette_number === 88 ||
+        roulette_number === 99
+      ) {
+        roulette_flag = 1;
+
+        $(".juice_button").map(function () {
+          if ($(".juice_button").val() >= 1) {
+            $(this).prop("disabled", false);
+          }
+        });
+      }
+    } else {
+      roulette_flag = 0;
     }
   });
 
@@ -238,11 +371,38 @@ $(function () {
       $("#thirty_remain").val($("#thirty_remain").val() - 1);
       $("#side_cola").text(Number($("#side_cola").text()) + 1);
       $("#remain_count").val($("#remain_count").val() - 1);
-      $("#count").text(Number($("#count").text()) - 300);
+      if (roulette_flag === 0) {
+        $("#count").text(Number($("#count").text()) - 300);
+      }
     }
     if (Number($("#thirty_remain").val()) === 0) {
       $("#thirty").text("売り切れ");
       $("#thirty").prop("disabled", true);
+    }
+    if (roulette_flag === 0) {
+      let roulette_number = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(roulette_number);
+      if (
+        roulette_number === 11 ||
+        roulette_number === 22 ||
+        roulette_number === 33 ||
+        roulette_number === 44 ||
+        roulette_number === 55 ||
+        roulette_number === 66 ||
+        roulette_number === 77 ||
+        roulette_number === 88 ||
+        roulette_number === 99
+      ) {
+        roulette_flag = 1;
+
+        $(".juice_button").map(function () {
+          if ($(".juice_button").val() >= 1) {
+            $(this).prop("disabled", false);
+          }
+        });
+      }
+    } else {
+      roulette_flag = 0;
     }
   });
 
@@ -251,20 +411,50 @@ $(function () {
       $("#fifty_remain").val($("#fifty_remain").val() - 1);
       $("#side_pain").text(Number($("#side_pain").text()) + 1);
       $("#remain_count").val($("#remain_count").val() - 1);
-      $("#count").text(Number($("#count").text()) - 500);
+      if (roulette_flag === 0) {
+        $("#count").text(Number($("#count").text()) - 500);
+      }
     }
     if (Number($("#fifty_remain").val()) === 0) {
       $("#fifty").text("売り切れ");
       $("#fifty").prop("disabled", true);
     }
+    if (roulette_flag === 0) {
+      let roulette_number = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(roulette_number);
+      if (
+        roulette_number === 11 ||
+        roulette_number === 22 ||
+        roulette_number === 33 ||
+        roulette_number === 44 ||
+        roulette_number === 55 ||
+        roulette_number === 66 ||
+        roulette_number === 77 ||
+        roulette_number === 88 ||
+        roulette_number === 99
+      ) {
+        roulette_flag = 1;
+
+        $(".juice_button").map(function () {
+          if ($(".juice_button").val() >= 1) {
+            $(this).prop("disabled", false);
+          }
+        });
+      }
+    } else {
+      roulette_flag = 0;
+    }
   });
 
   $("#reset").on("click", function () {
+    let total_money =
+      Number($("#count").text()) + Number($("#money_fifty").text());
+
     $("#count").text(0);
-    $("#money_fifty").text(money_fifty);
-    $("#money_thou").val(money_thou);
-    $("#money_ten").val(money_ten);
-    $("#money_one").val(money_one);
+    $("#money_fifty").text(total_money);
+    $("#money_thou").val(Math.floor(total_money / 1000));
+    $("#money_ten").val(Math.floor((total_money % 1000) / 100));
+    $("#money_one").val(Math.floor(((total_money % 1000) % 100) / 10));
   });
 
   $("#button_first").on("click", function () {
@@ -359,7 +549,7 @@ $(function () {
 // d 入った金額によってボタンを光らせる
 // d それぞれの金額のボタンを押すと自販機からその金額が引かれて、トータルのジュースの残数と個別の残数が1づつ減る、ただし、マイナスにならないようにする
 // d 横の買ったジュース欄に押したジュースが1追加される
-// 購入時、ジュースのボタンを押すとルーレットが回り、ゾロ目なら当たりとして、残金を減らさずにジュースを1本排出
-// 排出したジュースの残数を1減らして横の買ったジュース欄に押したジュースが1追加される
-// リセットボタンを押すと、自販機に入ってる額が財布に戻る
-// 初期状態を押すと全てがリセット
+// d 購入時、ジュースのボタンを押すとルーレットが回り、ゾロ目なら当たりとして、残金を減らさずにジュースを1本排出
+// d 排出したジュースの残数を1減らして横の買ったジュース欄に押したジュースが1追加される
+// d リセットボタンを押すと、自販機に入ってる額が財布に戻る
+// d 初期状態を押すと全てがリセット
