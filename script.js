@@ -1,14 +1,7 @@
 $(function () {
   let roulette_flag = 0;
 
-  // $(".juice_button").map(function () {
-  //   // console.log($(this).text().trim());
-  //   if ($(this).text().trim() === "120円") {
-  //     console.log("unko");
-  //   } else {
-  //     console.log("hoge");
-  //   }
-  // });
+  $("#roulette").text(0);
 
   $(".juice_button").prop("disabled", true);
 
@@ -27,6 +20,30 @@ $(function () {
     $("#twenty").prop("disabled", false);
     $("#thirty").prop("disabled", false);
     $("#fifty").prop("disabled", false);
+    if (Number($("#twelve_remain").val()) === 0) {
+      $("#twelve").prop("disabled", true);
+    }
+    if (Number($("#fourteen_remain").val()) === 0) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if (Number($("#fifteen_remain").val()) === 0) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if (Number($("#eighteen_remain").val()) === 0) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if (Number($("#ten_remain").val()) === 0) {
+      $("#ten").prop("disabled", true);
+    }
+    if (Number($("#twenty_remain").val()) === 0) {
+      $("#twenty").prop("disabled", true);
+    }
+    if (Number($("#thirty_remain").val()) === 0) {
+      $("#thirty").prop("disabled", true);
+    }
+    if (Number($("#fifty_remain").val()) === 0) {
+      $("#fifty").prop("disabled", true);
+    }
   });
   $(".money_ten").on("click", function () {
     if ($("#money_fifty").text() > 0 && $("#money_ten").val() > 0) {
@@ -37,7 +54,29 @@ $(function () {
     if ($("#count").text() >= 100 && $("#count").text() < 120) {
       $("#ten").prop("disabled", false);
     }
-    if ($("#count").text() >= 120 && $("#count").text() < 201) {
+    if ($("#count").text() >= 120 && $("#count").text() < 140) {
+      $("#ten").prop("disabled", false);
+      $("#twelve").prop("disabled", false);
+    }
+    if ($("#count").text() >= 140 && $("#count").text() < 150) {
+      $("#ten").prop("disabled", false);
+      $("#twelve").prop("disabled", false);
+      $("#fourteen").prop("disabled", false);
+    }
+    if ($("#count").text() >= 150 && $("#count").text() < 180) {
+      $("#ten").prop("disabled", false);
+      $("#twelve").prop("disabled", false);
+      $("#fourteen").prop("disabled", false);
+      $("#fifteen").prop("disabled", false);
+    }
+    if ($("#count").text() >= 180 && $("#count").text() < 200) {
+      $("#ten").prop("disabled", false);
+      $("#twelve").prop("disabled", false);
+      $("#fourteen").prop("disabled", false);
+      $("#fifteen").prop("disabled", false);
+      $("#eighteen").prop("disabled", false);
+    }
+    if ($("#count").text() >= 200 && $("#count").text() < 300) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
       $("#fourteen").prop("disabled", false);
@@ -45,7 +84,7 @@ $(function () {
       $("#eighteen").prop("disabled", false);
       $("#twenty").prop("disabled", false);
     }
-    if ($("#count").text() >= 201 && $("#count").text() < 301) {
+    if ($("#count").text() >= 300 && $("#count").text() < 500) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
       $("#fourteen").prop("disabled", false);
@@ -54,7 +93,7 @@ $(function () {
       $("#twenty").prop("disabled", false);
       $("#thirty").prop("disabled", false);
     }
-    if ($("#count").text() >= 401 && $("#count").text() < 501) {
+    if ($("#count").text() >= 500) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
       $("#fourteen").prop("disabled", false);
@@ -63,6 +102,30 @@ $(function () {
       $("#twenty").prop("disabled", false);
       $("#thirty").prop("disabled", false);
       $("#fifty").prop("disabled", false);
+    }
+    if (Number($("#twelve_remain").val()) === 0) {
+      $("#twelve").prop("disabled", true);
+    }
+    if (Number($("#fourteen_remain").val()) === 0) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if (Number($("#fifteen_remain").val()) === 0) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if (Number($("#eighteen_remain").val()) === 0) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if (Number($("#ten_remain").val()) === 0) {
+      $("#ten").prop("disabled", true);
+    }
+    if (Number($("#twenty_remain").val()) === 0) {
+      $("#twenty").prop("disabled", true);
+    }
+    if (Number($("#thirty_remain").val()) === 0) {
+      $("#thirty").prop("disabled", true);
+    }
+    if (Number($("#fifty_remain").val()) === 0) {
+      $("#fifty").prop("disabled", true);
     }
   });
   $(".money_one").on("click", function () {
@@ -74,29 +137,29 @@ $(function () {
     if ($("#count").text() >= 100 && $("#count").text() < 120) {
       $("#ten").prop("disabled", false);
     }
-    if ($("#count").text() >= 120 && $("#count").text() < 121) {
+    if ($("#count").text() >= 120 && $("#count").text() < 140) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
     }
-    if ($("#count").text() >= 140 && $("#count").text() < 141) {
+    if ($("#count").text() >= 140 && $("#count").text() < 150) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
       $("#fourteen").prop("disabled", false);
     }
-    if ($("#count").text() >= 150 && $("#count").text() < 151) {
+    if ($("#count").text() >= 150 && $("#count").text() < 180) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
       $("#fourteen").prop("disabled", false);
       $("#fifteen").prop("disabled", false);
     }
-    if ($("#count").text() >= 180 && $("#count").text() < 181) {
+    if ($("#count").text() >= 180 && $("#count").text() < 200) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
       $("#fourteen").prop("disabled", false);
       $("#fifteen").prop("disabled", false);
       $("#eighteen").prop("disabled", false);
     }
-    if ($("#count").text() >= 200 && $("#count").text() < 201) {
+    if ($("#count").text() >= 200 && $("#count").text() < 300) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
       $("#fourteen").prop("disabled", false);
@@ -104,7 +167,7 @@ $(function () {
       $("#eighteen").prop("disabled", false);
       $("#twenty").prop("disabled", false);
     }
-    if ($("#count").text() >= 300 && $("#count").text() < 301) {
+    if ($("#count").text() >= 300 && $("#count").text() < 500) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
       $("#fourteen").prop("disabled", false);
@@ -113,7 +176,7 @@ $(function () {
       $("#twenty").prop("disabled", false);
       $("#thirty").prop("disabled", false);
     }
-    if ($("#count").text() >= 500 && $("#count").text() < 501) {
+    if ($("#count").text() >= 500) {
       $("#ten").prop("disabled", false);
       $("#twelve").prop("disabled", false);
       $("#fourteen").prop("disabled", false);
@@ -122,6 +185,30 @@ $(function () {
       $("#twenty").prop("disabled", false);
       $("#thirty").prop("disabled", false);
       $("#fifty").prop("disabled", false);
+    }
+    if (Number($("#twelve_remain").val()) === 0) {
+      $("#twelve").prop("disabled", true);
+    }
+    if (Number($("#fourteen_remain").val()) === 0) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if (Number($("#fifteen_remain").val()) === 0) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if (Number($("#eighteen_remain").val()) === 0) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if (Number($("#ten_remain").val()) === 0) {
+      $("#ten").prop("disabled", true);
+    }
+    if (Number($("#twenty_remain").val()) === 0) {
+      $("#twenty").prop("disabled", true);
+    }
+    if (Number($("#thirty_remain").val()) === 0) {
+      $("#thirty").prop("disabled", true);
+    }
+    if (Number($("#fifty_remain").val()) === 0) {
+      $("#fifty").prop("disabled", true);
     }
   });
   $("#twelve").on("click", function () {
@@ -132,6 +219,30 @@ $(function () {
       if (roulette_flag === 0) {
         $("#count").text(Number($("#count").text()) - 120);
       }
+    }
+    if ($("#count").text() < 100) {
+      $("#ten").prop("disabled", true);
+    }
+    if ($("#count").text() < 120) {
+      $("#twelve").prop("disabled", true);
+    }
+    if ($("#count").text() < 140) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 150) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 180) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 200) {
+      $("#twenty").prop("disabled", true);
+    }
+    if ($("#count").text() < 300) {
+      $("#thirty").prop("disabled", true);
+    }
+    if ($("#count").text() < 500) {
+      $("#fifty").prop("disabled", true);
     }
 
     if (Number($("#twelve_remain").val()) === 0) {
@@ -155,7 +266,7 @@ $(function () {
         roulette_flag = 1;
 
         $(".juice_button").map(function () {
-          if ($(".juice_button").val() >= 1) {
+          if ($("#" + $(this).prop("id") + "_remain").val() >= 1) {
             $(this).prop("disabled", false);
           }
         });
@@ -173,6 +284,30 @@ $(function () {
       if (roulette_flag === 0) {
         $("#count").text(Number($("#count").text()) - 140);
       }
+    }
+    if ($("#count").text() < 100) {
+      $("#ten").prop("disabled", true);
+    }
+    if ($("#count").text() < 120) {
+      $("#twelve").prop("disabled", true);
+    }
+    if ($("#count").text() < 140) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 150) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 180) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 200) {
+      $("#twenty").prop("disabled", true);
+    }
+    if ($("#count").text() < 300) {
+      $("#thirty").prop("disabled", true);
+    }
+    if ($("#count").text() < 500) {
+      $("#fifty").prop("disabled", true);
     }
     if (Number($("#fourteen_remain").val()) === 0) {
       $("#fourteen").text("売り切れ");
@@ -195,7 +330,7 @@ $(function () {
         roulette_flag = 1;
 
         $(".juice_button").map(function () {
-          if ($(".juice_button").val() >= 1) {
+          if ($("#" + $(this).prop("id") + "_remain").val() >= 1) {
             $(this).prop("disabled", false);
           }
         });
@@ -214,6 +349,30 @@ $(function () {
       if (roulette_flag === 0) {
         $("#count").text(Number($("#count").text()) - 150);
       }
+    }
+    if ($("#count").text() < 100) {
+      $("#ten").prop("disabled", true);
+    }
+    if ($("#count").text() < 120) {
+      $("#twelve").prop("disabled", true);
+    }
+    if ($("#count").text() < 140) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 150) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 180) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 200) {
+      $("#twenty").prop("disabled", true);
+    }
+    if ($("#count").text() < 300) {
+      $("#thirty").prop("disabled", true);
+    }
+    if ($("#count").text() < 500) {
+      $("#fifty").prop("disabled", true);
     }
     if (Number($("#fifteen_remain").val()) === 0) {
       $("#fifteen").text("売り切れ");
@@ -236,7 +395,7 @@ $(function () {
         roulette_flag = 1;
 
         $(".juice_button").map(function () {
-          if ($(".juice_button").val() >= 1) {
+          if ($("#" + $(this).prop("id") + "_remain").val() >= 1) {
             $(this).prop("disabled", false);
           }
         });
@@ -254,6 +413,30 @@ $(function () {
       if (roulette_flag === 0) {
         $("#count").text(Number($("#count").text()) - 180);
       }
+    }
+    if ($("#count").text() < 100) {
+      $("#ten").prop("disabled", true);
+    }
+    if ($("#count").text() < 120) {
+      $("#twelve").prop("disabled", true);
+    }
+    if ($("#count").text() < 140) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 150) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 180) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 200) {
+      $("#twenty").prop("disabled", true);
+    }
+    if ($("#count").text() < 300) {
+      $("#thirty").prop("disabled", true);
+    }
+    if ($("#count").text() < 500) {
+      $("#fifty").prop("disabled", true);
     }
     if (Number($("#eighteen_remain").val()) === 0) {
       $("#eighteen").text("売り切れ");
@@ -276,7 +459,7 @@ $(function () {
         roulette_flag = 1;
 
         $(".juice_button").map(function () {
-          if ($(".juice_button").val() >= 1) {
+          if ($("#" + $(this).prop("id") + "_remain").val() >= 1) {
             $(this).prop("disabled", false);
           }
         });
@@ -294,6 +477,30 @@ $(function () {
       if (roulette_flag === 0) {
         $("#count").text(Number($("#count").text()) - 100);
       }
+    }
+    if ($("#count").text() < 100) {
+      $("#ten").prop("disabled", true);
+    }
+    if ($("#count").text() < 120) {
+      $("#twelve").prop("disabled", true);
+    }
+    if ($("#count").text() < 140) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 150) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 180) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 200) {
+      $("#twenty").prop("disabled", true);
+    }
+    if ($("#count").text() < 300) {
+      $("#thirty").prop("disabled", true);
+    }
+    if ($("#count").text() < 500) {
+      $("#fifty").prop("disabled", true);
     }
     if (Number($("#ten_remain").val()) === 0) {
       $("#ten").text("売り切れ");
@@ -316,7 +523,7 @@ $(function () {
         roulette_flag = 1;
 
         $(".juice_button").map(function () {
-          if ($(".juice_button").val() >= 1) {
+          if ($("#" + $(this).prop("id") + "_remain").val() >= 1) {
             $(this).prop("disabled", false);
           }
         });
@@ -334,6 +541,30 @@ $(function () {
       if (roulette_flag === 0) {
         $("#count").text(Number($("#count").text()) - 200);
       }
+    }
+    if ($("#count").text() < 100) {
+      $("#ten").prop("disabled", true);
+    }
+    if ($("#count").text() < 120) {
+      $("#twelve").prop("disabled", true);
+    }
+    if ($("#count").text() < 140) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 150) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 180) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 200) {
+      $("#twenty").prop("disabled", true);
+    }
+    if ($("#count").text() < 300) {
+      $("#thirty").prop("disabled", true);
+    }
+    if ($("#count").text() < 500) {
+      $("#fifty").prop("disabled", true);
     }
     if (Number($("#twenty_remain").val()) === 0) {
       $("#twenty").text("売り切れ");
@@ -356,7 +587,7 @@ $(function () {
         roulette_flag = 1;
 
         $(".juice_button").map(function () {
-          if ($(".juice_button").val() >= 1) {
+          if ($("#" + $(this).prop("id") + "_remain").val() >= 1) {
             $(this).prop("disabled", false);
           }
         });
@@ -374,6 +605,30 @@ $(function () {
       if (roulette_flag === 0) {
         $("#count").text(Number($("#count").text()) - 300);
       }
+    }
+    if ($("#count").text() < 100) {
+      $("#ten").prop("disabled", true);
+    }
+    if ($("#count").text() < 120) {
+      $("#twelve").prop("disabled", true);
+    }
+    if ($("#count").text() < 140) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 150) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 180) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 200) {
+      $("#twenty").prop("disabled", true);
+    }
+    if ($("#count").text() < 300) {
+      $("#thirty").prop("disabled", true);
+    }
+    if ($("#count").text() < 500) {
+      $("#fifty").prop("disabled", true);
     }
     if (Number($("#thirty_remain").val()) === 0) {
       $("#thirty").text("売り切れ");
@@ -396,7 +651,7 @@ $(function () {
         roulette_flag = 1;
 
         $(".juice_button").map(function () {
-          if ($(".juice_button").val() >= 1) {
+          if ($("#" + $(this).prop("id") + "_remain").val() >= 1) {
             $(this).prop("disabled", false);
           }
         });
@@ -414,6 +669,30 @@ $(function () {
       if (roulette_flag === 0) {
         $("#count").text(Number($("#count").text()) - 500);
       }
+    }
+    if ($("#count").text() < 100) {
+      $("#ten").prop("disabled", true);
+    }
+    if ($("#count").text() < 120) {
+      $("#twelve").prop("disabled", true);
+    }
+    if ($("#count").text() < 140) {
+      $("#fourteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 150) {
+      $("#fifteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 180) {
+      $("#eighteen").prop("disabled", true);
+    }
+    if ($("#count").text() < 200) {
+      $("#twenty").prop("disabled", true);
+    }
+    if ($("#count").text() < 300) {
+      $("#thirty").prop("disabled", true);
+    }
+    if ($("#count").text() < 500) {
+      $("#fifty").prop("disabled", true);
     }
     if (Number($("#fifty_remain").val()) === 0) {
       $("#fifty").text("売り切れ");
@@ -436,7 +715,7 @@ $(function () {
         roulette_flag = 1;
 
         $(".juice_button").map(function () {
-          if ($(".juice_button").val() >= 1) {
+          if ($("#" + $(this).prop("id") + "_remain").val() >= 1) {
             $(this).prop("disabled", false);
           }
         });
@@ -455,9 +734,26 @@ $(function () {
     $("#money_thou").val(Math.floor(total_money / 1000));
     $("#money_ten").val(Math.floor((total_money % 1000) / 100));
     $("#money_one").val(Math.floor(((total_money % 1000) % 100) / 10));
+
+    $("#ten").prop("disabled", true);
+
+    $("#twelve").prop("disabled", true);
+
+    $("#fourteen").prop("disabled", true);
+
+    $("#fifteen").prop("disabled", true);
+
+    $("#eighteen").prop("disabled", true);
+
+    $("#twenty").prop("disabled", true);
+
+    $("#thirty").prop("disabled", true);
+
+    $("#fifty").prop("disabled", true);
   });
 
   $("#button_first").on("click", function () {
+    $("#roulette").text(0);
     $("#count").text(0);
     $("#money_fifty").text(5000);
     $("#money_thou").val(4);
@@ -494,52 +790,6 @@ $(function () {
       true
     );
   });
-
-  // const button_light = {
-  //   "#twelve": 120,
-  //   "#fourteen": 140,
-  //   "#fifteen": 150,
-  //   "#eighteen": 180,
-  //   "#ten": 100,
-  //   "#twenty": 200,
-  //   "#thirty": 300,
-  //   "#fifty": 500,
-  // };
-  // let juice_price = () => {
-  //   $(".money_count").map($(".money_count").text() > $(".juice_button"));
-  //   console.log("hoge");
-  // };
-  // $(".juice_button").prop("disabled", true);
-  // $(".money_button").on("click", function () {
-  //   if ($("#money_fifty").text() > 0 && $(".money_remain").val() > 0) {
-  //     $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
-  //     $(this)
-  //       .prev()
-  //       .val($(this).prev().val() - 1);
-  //     $("#count").text(
-  //       Number($("#count").text()) + Number($(this).data("money"))
-  //     );
-  //   }
-  //   $(".juice_button").map(function () {
-  //     if ($("#count").text() >= "#" + $(".juice_button")) {
-  //       $("#twelve").prop("disabled", false);
-  //     }
-  //   });
-  //   if ($("#count").text() >= "#" + $(".juice_button").map()) {
-  //     $("#twelve").prop("disabled", false);
-  //   }
-  //   if ($("#count").text() >= 100) {
-  //     $("#ten").prop("disabled", false);
-  //   }
-  //   if ($("#count").text() >= 140) {
-  //     $("#fourteen").prop("disabled", false);
-  //   }
-  //   if ($("#count").text() >= 200) {
-  //     $("#twenty").prop("disabled", false);
-  //   }
-  //   juice_price();
-  // });
-  // $("").on("click", function () {});
 });
 
 // d 1000円押したら財布から1000円が自販機に入って、財布から1000円引かれる、1000円の残数から1引かれる、ただし、マイナスにならないようにする
