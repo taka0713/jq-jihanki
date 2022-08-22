@@ -211,6 +211,31 @@ $(function () {
       $("#fifty").prop("disabled", true);
     }
   });
+
+  let juice_price = () => {
+    $("juice_button").map(function () {
+      $(this).prop("disabled", $("#count").text() < $(this).data("price"));
+      if (Number($("#" + $(this).data("id") + "_remain").val()) === 0) {
+        $(this).prop("disabled", true);
+      }
+    });
+  };
+  let juice_reset = () => {
+    $("juice_button").map(function () {
+      $(this).prop("disabled", true);
+    });
+    roulette_flag = 0;
+  };
+  $(".money_button").on("click", function () {
+    if ($(this).prev("input").val() > 0) {
+      $(this)
+        .prev("input")
+        .val($(this).prev("input").val() - 1);
+      $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
+      $("#count").text($("#count").text() + $(this).data("money"));
+    }
+    juice_price();
+  });
   $("#twelve").on("click", function () {
     if ($("#twelve_remain").val() > 0 && $("#count").text() > 0) {
       $("#twelve_remain").val($("#twelve_remain").val() - 1);
