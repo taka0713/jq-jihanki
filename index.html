@@ -27,28 +27,36 @@
 
         <div class="quantity_one">
           <label
-            ><input type="text" id="twelve_remain" value="10" class="juice_one"
+            ><input
+              type="text"
+              id="twelve_remain"
+              value="10"
+              class="juice_one all_reset"
+              data-default="10"
           /></label>
           <label
             ><input
               type="text"
               id="fourteen_remain"
               value="10"
-              class="juice_one"
+              class="juice_one all_reset"
+              data-default="10"
           /></label>
           <label
             ><input
               type="text"
               id="fifteen_remain"
               value="10"
-              class="juice_one"
+              class="juice_one all_reset"
+              data-default="10"
           /></label>
           <label
             ><input
               type="text"
               id="eighteen_remain"
               value="10"
-              class="juice_one"
+              class="juice_one all_reset"
+              data-default="10"
           /></label>
         </div>
         <div class="juice_top">
@@ -71,6 +79,7 @@
             id="twelve"
             data-pricee="120"
             class="juice_button all_reset"
+            data-default="120円"
           >
             120円
           </button>
@@ -79,6 +88,7 @@
             id="fourteen"
             data-price="140"
             class="juice_button all_reset"
+            data-default="140円"
           >
             140円
           </button>
@@ -87,6 +97,7 @@
             id="fifteen"
             data-price="150"
             class="juice_button all_reset"
+            data-default="150円"
           >
             150円
           </button>
@@ -95,22 +106,44 @@
             id="eighteen"
             data-price="180"
             class="juice_button all_reset"
+            data-default="180円"
           >
             180円
           </button>
         </div>
         <div class="quantity_two">
           <label>
-            <input type="text" id="ten_remain" value="10" class="juice_one" />
+            <input
+              type="text"
+              id="ten_remain"
+              value="10"
+              class="juice_one all_reset"
+              data-default="10"
+            />
           </label>
           <label
-            ><input type="text" id="twenty_remain" value="10" class="juice_one"
+            ><input
+              type="text"
+              id="twenty_remain"
+              value="10"
+              class="juice_one all_reset"
+              data-default="10"
           /></label>
           <label
-            ><input type="text" id="thirty_remain" value="10" class="juice_one"
+            ><input
+              type="text"
+              id="thirty_remain"
+              value="10"
+              class="juice_one all_reset"
+              data-default="10"
           /></label>
           <label
-            ><input type="text" id="fifty_remain" value="10" class="juice_one"
+            ><input
+              type="text"
+              id="fifty_remain"
+              value="10"
+              class="juice_one all_reset"
+              data-default="10"
           /></label>
         </div>
         <div class="juice_bottom">
@@ -142,6 +175,7 @@
             id="twenty"
             data-price="200"
             class="juice_button all_reset"
+            data-default="200円"
           >
             200円
           </button>
@@ -150,6 +184,7 @@
             id="thirty"
             data-price="300"
             class="juice_button all_reset"
+            data-default="300円"
           >
             300円
           </button>
@@ -158,15 +193,27 @@
             id="fifty"
             data-price="500"
             class="juice_button all_reset"
+            data-default="500円"
           >
             500円
           </button>
         </div>
         <div class="money">
-          <div><span id="count" class="money_count">0</span>円</div>
+          <div>
+            <span id="count" class="money_count all_reset" data-default="0"
+              >0</span
+            >円
+          </div>
           <button type="button" id="reset">リセット</button>
           <div class="roulette">
-            <div><span id="roulette" class="roulette_number">0</span></div>
+            <div>
+              <span
+                id="roulette"
+                class="roulette_number all_reset"
+                data-default="0"
+                >0</span
+              >
+            </div>
           </div>
           <div class="money_input"></div>
         </div>
@@ -174,17 +221,27 @@
       </div>
       <div class="container">
         <div class="remaining_juice">
-          <p>残り<input type="text" value="80" id="remain_count" />本</p>
+          <p>
+            残り<input
+              type="text"
+              value="80"
+              id="remain_count all_reset"
+              data-default="80"
+            />本
+          </p>
           <div>
             財布
-            <span id="money_fifty">5000</span>円
+            <span id="money_fifty" class="all_reset" data-default="5000"
+              >5000</span
+            >円
           </div>
           <p>
             千円<input
               type="text"
               id="money_thou"
               value="4"
-              class="money_remain"
+              class="money_remain all_reset"
+              data-default="4"
             />枚<button
               type="button"
               data-money="1000"
@@ -200,7 +257,8 @@
               type="text"
               id="money_ten"
               value="9"
-              class="money_remain"
+              class="money_remain all_reset"
+              data-default="9"
             />枚<button
               type="button"
               data-money="100"
@@ -215,7 +273,8 @@
               type="text"
               id="money_one"
               value="10"
-              class="money_remain"
+              class="money_remain all_reset"
+              data-default="10"
             />枚<button
               type="button"
               data-money="10"
@@ -225,14 +284,44 @@
               十
             </button>
           </p>
-          <div>三ツ矢<span id="side_mituya">0</span>本</div>
-          <div>ポン　<span id="side_pon">0</span>本</div>
-          <div>トロピ<span id="side_toropi">0</span>本</div>
-          <div>お茶　<span id="side_tea">0</span>本</div>
-          <div>レモン<span id="side_lemon">0</span>本</div>
-          <div>ネクタ<span id="side_nekuta">0</span>本</div>
-          <div>コーラ<span id="side_cola">0</span>本</div>
-          <div>パイン<span id="side_pain">0</span>本</div>
+          <div>
+            三ツ矢<span id="side_mituya" class="all_reset" data-default="0"
+              >0</span
+            >本
+          </div>
+          <div>
+            ポン　<span id="side_pon" class="all_reset" data-default="0">0</span
+            >本
+          </div>
+          <div>
+            トロピ<span id="side_toropi" class="all_reset" data-default="0"
+              >0</span
+            >本
+          </div>
+          <div>
+            お茶　<span id="side_tea" class="all_reset" data-default="0">0</span
+            >本
+          </div>
+          <div>
+            レモン<span id="side_lemon" class="all_reset" data-default="0"
+              >0</span
+            >本
+          </div>
+          <div>
+            ネクタ<span id="side_nekuta" class="all_reset" data-default="0"
+              >0</span
+            >本
+          </div>
+          <div>
+            コーラ<span id="side_cola" class="all_reset" data-default="0"
+              >0</span
+            >本
+          </div>
+          <div>
+            パイン<span id="side_pain" class="all_reset" data-default="0"
+              >0</span
+            >本
+          </div>
           <button type="button" id="button_first" class="first_time">
             初期状態
           </button>
