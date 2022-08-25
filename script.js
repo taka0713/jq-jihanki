@@ -1,6 +1,5 @@
 $(function () {
   let roulette_flag = 0;
-
   let roulette_number = 0;
 
   const roulette_hit = [11, 22, 33, 44, 55, 66, 77, 88, 99];
