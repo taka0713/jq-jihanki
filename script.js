@@ -20,15 +20,16 @@ $(function () {
   $(".juice_button").prop("disabled", true);
 
   let juice_price = () => {
-    $("juice_button").map(function () {
+    $(".juice_button").map(function () {
       $(this).prop("disabled", $("#count").text() < $(this).data("price"));
+
       if (Number($("#" + $(this).data("id") + "_remain").val()) === 0) {
         $(this).prop("disabled", true);
       }
     });
   };
   let juice_reset = () => {
-    $("juice_button").map(function () {
+    $(".juice_button").map(function () {
       $(this).prop("disabled", true);
     });
     roulette_flag = 0;
@@ -45,9 +46,9 @@ $(function () {
     }
 
     juice_price();
-    console.log(juice_price());
   });
-  $("juice_button").on("click", function () {
+
+  $(".juice_button").on("click", function () {
     if (
       $("#" + $(this).prop("id") + "_remain").val() > 0 &&
       $("#count").text() - $(this).data("price") >= 0
@@ -93,17 +94,15 @@ $(function () {
     });
     juice_reset();
   });
-  $("reset").on("click", function () {
-    $("#count").text(0);
-    $("#money_fifty").text(
-      Number($("#money_fifty").text()) + Number($("#count").text())
-    );
-    let money_money =
+  $("#reset").on("click", function () {
+    let total_money =
       Number($("#money_fifty").text()) + Number($("#count").text());
-    $("#money_thou").val(Math.floor(money_money / 1000));
+    $("#money_thou").val(Math.floor(total_money / 1000));
     $("#money_ten").val(Math.floor((total_money % 1000) / 100));
     $("#money_one").val(Math.floor(((total_money % 1000) % 100) / 10));
+    $("#money_fifty").text(total_money);
     juice_reset();
+    $("#count").text(0);
   });
 
   //   $(".money_thou").on("click", function () {
