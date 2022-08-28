@@ -1,5 +1,5 @@
 $(function () {
-  const rensou = {
+  let rensou = {
     twelve: "side_mituya",
     fourteen: "side_pon",
     fifteen: "side_toropi",
@@ -10,26 +10,27 @@ $(function () {
     fifty: "side_pain",
   };
   $(".money_button").on("click", function () {
-    if ($(this).prev("input").val() > 0) {
-      $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
-      $("#count").text(Number($("#count").text()) + $(this).data("money"));
+    if ($("#money_fifty").text() > 0 && $(this).prev("input").val() > 0) {
       $(this)
         .prev("input")
         .val($(this).prev("input").val() - 1);
+      $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
+      $("#count").text(Number($("#count").text()) + $(this).data("money"));
     }
   });
   $(".juice_button").on("click", function () {
     if (
-      $("#count").text() > 0 &&
+      Number($("#count").text()) - $(this).data("price") >= 0 &&
       $("#" + $(this).prop("id") + "_remain").val() > 0
     ) {
+      $("#count").text(Number($("#count").text()) - $(this).data("price"));
       let stock = $("#" + $(this).prop("id") + "_remain").val();
       $("#" + $(this).prop("id") + "_remain").val(stock - 1);
-      $("#count").text($("#count").text() - $(this).data("price"));
-      $("#remain_count").val($("#remain_count").val() - 1);
-      console.log($(rensou[$(this).prop("id")]).text());
-      $(rensou[$(this).prop("id")]).text(
-        Number($(rensou[$(this).prop("id")]).text()) + 1
+
+      console.log(Number($("#" + rensou[$(this).prop("id")]).text()) + 1);
+      console.log($(this).prop("id"));
+      $("#" + rensou[$(this).prop("id")]).text(
+        Number($("#" + rensou[$(this).prop("id")]).text()) + 1
       );
     }
   });
@@ -68,8 +69,8 @@ $(function () {
 //       $("#count").text(Number($("#count").text()) - $(this).data("price"));
 //       let stock = $("#" + $(this).prop("id") + "_remain").val();
 //       $("#" + $(this).prop("id") + "_remain").val(stock - 1);
-//       $(rensou[$(this).prop("id")]).text(
-//         Number($(rensou[$(this).prop("id")]).text()) + 1
+//       $("#" + rensou[$(this).prop("id")]).text(
+//         Number($("#" + rensou[$(this).prop("id")]).text()) + 1
 //       );
 //     }
 //     if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
