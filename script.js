@@ -1,6 +1,7 @@
 $(function () {
   let roulette_flag = 0;
   $(".juice_button").prop("disabled", true);
+
   const roulette_hit = [11, 22, 33, 44, 55, 66, 77, 88, 99];
   const rensou = {
     twelve: "side_mituya",
