@@ -1,5 +1,8 @@
 $(function () {
-  let rensou = {
+  let roulette_flag = 0;
+  $(".juice_button").prop("disabled", true);
+  const roulette_hit = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+  const rensou = {
     twelve: "side_mituya",
     fourteen: "side_pon",
     fifteen: "side_toropi",
@@ -9,38 +12,96 @@ $(function () {
     thirty: "side_cola",
     fifty: "side_pain",
   };
+  let juice_price = () => {
+    $(".juice_button").map(function () {
+      $(this).prop(
+        "disabled",
+        Number($("#count").text()) < $(this).data("price")
+      );
+      if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+        $(this).prop("disabled", true);
+        $(this).text("売り切れ");
+      }
+    });
+  };
+  let juice_reset = () => {
+    $(".juice_button").prop("disabled", true);
+  };
   $(".money_button").on("click", function () {
     if ($("#money_fifty").text() > 0 && $(this).prev("input").val() > 0) {
+      $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
+      $("#count").text(Number($("#count").text()) + $(this).data("money"));
       $(this)
         .prev("input")
         .val($(this).prev("input").val() - 1);
-      $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
-      $("#count").text(Number($("#count").text()) + $(this).data("money"));
     }
+    juice_price();
   });
   $(".juice_button").on("click", function () {
+    if (roulette_flag === 0) {
+      $("#count").text(Number($("#count").text()) - $(this).data("price"));
+    }
     if (
       Number($("#count").text()) - $(this).data("price") >= 0 &&
       $("#" + $(this).prop("id") + "_remain").val() > 0
     ) {
-      $("#count").text(Number($("#count").text()) - $(this).data("price"));
       let stock = $("#" + $(this).prop("id") + "_remain").val();
       $("#" + $(this).prop("id") + "_remain").val(stock - 1);
-
-      console.log(Number($("#" + rensou[$(this).prop("id")]).text()) + 1);
-      console.log($(this).prop("id"));
+      $("#remain_count").val($("#remain_count").val() - 1);
       $("#" + rensou[$(this).prop("id")]).text(
         Number($("#" + rensou[$(this).prop("id")]).text()) + 1
       );
+      juice_price();
+    }
+
+    if (roulette_flag === 0) {
+      let random = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(random);
+
+      if (roulette_hit.indexOf(random) !== -1) {
+        roulette_flag = 1;
+        if (roulette_flag === 1) {
+          $("#reset").prop("disabled", true);
+          if ($("#" + $(this).prop("id") + "_remain").val() > 0) {
+            $(this).prop("disabled", false);
+          }
+          if ($("#" + $(this).prop("id") + "_remain").val() === 0) {
+            $(this).prop("disabled", true);
+          }
+        }
+      }
+    } else {
+      roulette_flag = 0;
+      $("#roulette").text(0);
+      $("#reset").prop("disabled", false);
     }
   });
+  $("#reset").on("click", function () {
+    let total_money =
+      Number($("#count").text()) + Number($("#money_fifty").text());
+    $("#money_fifty").text(total_money);
+    $("#money_thou").val(Math.floor(total_money / 1000));
+    $("#money_ten").val(Math.floor((total_money % 1000) / 100));
+    $("#money_one").val(Math.floor(((total_money % 1000) % 100) / 10));
+    $("#count").text(0);
+    juice_reset();
+  });
+  $("#button_first").on("click", function () {
+    $(".all_reset").map(function () {
+      $(this).text($(this).data("default"));
+      $(this).val($(this).data("default"));
+    });
+    juice_reset();
+  });
 });
-//   let roulette_flag = 0;
-//   let random = 0;
-//   $(".juice_button").prop("disabled", true);
+
+// let roulette_flag = 0;
+//   $("#roulette").text(0);
+//   $(".juice_button").map(function () {
+//     $(this).prop("disabled", true);
+//   });
 
 //   const roulette_hit = [11, 22, 33, 44, 55, 66, 77, 88, 99];
-
 //   const rensou = {
 //     twelve: "side_mituya",
 //     fourteen: "side_pon",
@@ -51,62 +112,92 @@ $(function () {
 //     thirty: "side_cola",
 //     fifty: "side_pain",
 //   };
+
+//   let juice_price = () => {
+//     $(".juice_button").map(function () {
+//       $(this).prop("disabled", $("#count").text() < $(this).data("price"));
+//       if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+//         $(this).prop("disabled", true);
+//       }
+//     });
+//   };
+//   let juice_reset = () => {
+//     $(".juice_button").map(function () {
+//       $(this).prop("disabled", true);
+//       $("#roulette").text(0);
+//     });
+//   };
 //   $(".money_button").on("click", function () {
-//     if ($(this).prev("input").val() > 0) {
+//     if ($("#money_fifty").text() > 0 && $(this).prev("input").val() > 0) {
 //       $(this)
 //         .prev("input")
 //         .val($(this).prev("input").val() - 1);
 //       $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
 //       $("#count").text(Number($("#count").text()) + $(this).data("money"));
 //     }
+//     juice_price();
 //   });
-
 //   $(".juice_button").on("click", function () {
 //     if (
-//       $("#count").text() - $(this).data("price") >= 0 &&
+//       Number($("#count").text()) - $(this).data("price") >= 0 &&
 //       $("#" + $(this).prop("id") + "_remain").val() > 0
 //     ) {
-//       $("#count").text(Number($("#count").text()) - $(this).data("price"));
+//       if (roulette_flag === 0) {
+//         $("#count").text(Number($("#count").text()) - $(this).data("price"));
+//       }
 //       let stock = $("#" + $(this).prop("id") + "_remain").val();
 //       $("#" + $(this).prop("id") + "_remain").val(stock - 1);
 //       $("#" + rensou[$(this).prop("id")]).text(
 //         Number($("#" + rensou[$(this).prop("id")]).text()) + 1
 //       );
-//     }
-//     if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
-//       $(this).text("売り切れ");
-//       $(this).prop("disabled", true);
+//       $("#remain_count").val($("#remain_count").val() - 1);
+//       if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+//         $(this).prop("disabled", true);
+//         $(this).text("売り切れ");
+//       }
 //     }
 //     if (roulette_flag === 0) {
-//       roulette_number = Math.floor(Math.random() * 99) + 1;
-//       $("#roulette").text(roulette_number);
-//       if (roulette_hit.indexOf(roulette_number) !== -1) {
+//       let random = Math.floor(Math.random() * 99) + 1;
+//       $("#roulette").text(random);
+//       if (roulette_hit.indexOf(random) !== -1) {
 //         roulette_flag = 1;
-//         if ($("#" + $(this).prop("id") + "_remain").val() > 0) {
+//         $("#reset").prop("disabled", true);
+//         if (Number($("#" + $(this).prop("id") + "_remain").val()) > 0) {
 //           $(".juice_button").map(function () {
 //             $(this).prop("disabled", false);
 //           });
-//           if ($("#" + $(this).prop("id") + "_remain").val() === 0) {
-//             $(".juice_button").map(function () {
-//               $(this).prop("disabled", true);
-//             });
-//           }
 //         }
-//       } else {
-//         roulette_flag = 0;
-//         $("#roulette").text(0);
+//         if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+//           $(".juice_button").map(function () {
+//             $(this).prop("disabled", true);
+//           });
+//         }
 //       }
+//     } else {
+//       roulette_flag = 0;
+//       $("#roulette").text(0);
+//       $("#reset").prop("disabled", false);
 //     }
-//   });
 
+//     juice_price();
+//   });
 //   $("#reset").on("click", function () {
-//     let total_money = $("#money_fifty").text() + $("#count").text();
-//     $("#money_thou").val(Math.floor(total_money / 1000));
-//     $("#money_ten").val(Math.floor(total_money % 1000) / 100);
-//     $("#money_one").val(Math.floor(total_money % 1000) % 100) / 10;
+//     let total_money =
+//       Number($("#count").text()) + Number($("#money_fifty").text());
 //     $("#money_fifty").text(total_money);
-//     $("#roulette").text(0);
+//     $("#money_thou").val(Math.floor(total_money / 1000));
+//     $("#money_ten").val(Math.floor((total_money % 1000) / 100));
+//     $("#money_one").val(Math.floor((total_money % 1000) % 100) / 10);
 //     $("#count").text(0);
+//     $("#roulette").text(0);
+//     juice_reset();
+//   });
+//   $("#button_first").on("click", function () {
+//     $(".all_reset").map(function () {
+//       $(this).val($(this).data("default"));
+//       $(this).text($(this).data("default"));
+//     });
+//     juice_reset();
 //   });
 
 //   $(".money_thou").on("click", function () {
