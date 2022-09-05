@@ -54,6 +54,22 @@ $(function () {
       $("#roulette").text(0);
     }
   });
+  $("#reset").on("click", function () {
+    let total_money =
+      Number($("#count").text()) + Number($("#money_fifty").text());
+    $("#money_fifty").text(total_money);
+    $("#money_thou").val(Math.floor(total_money / 1000));
+    $("#money_ten").val(Math.floor((total_money % 1000) / 100));
+    $("#money_one").val(Math.floor(((total_money % 1000) % 100) / 10));
+    $("#count").text(0);
+    $("#roulette").text(0);
+  });
+  $("#button_first").on("click", function () {
+    $(".all_reset").map(function () {
+      $(this).val($(this).data("default"));
+      $(this).text($(this).data("default"));
+    });
+  });
 });
 
 // let roulette_flag = 0;
