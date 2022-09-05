@@ -1,6 +1,58 @@
 $(function () {
+  let roulette_flag = 0;
+  $("#roulette").text(0);
+  let roulette_hit = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+  const rensou = {
+    twelve: "side_mituya",
+    fourteen: "side_pon",
+    fifteen: "side_toropi",
+    eighteen: "side_tea",
+    ten: "side_lemon",
+    twenty: "side_nekuta",
+    thirty: "side_cola",
+    fifty: "side_pain",
+  };
   $(".money_button").on("click", function () {
-    $("#money_fifty").text($("#money_fifty").text() - $("#count").text());
+    if ($("#money_fifty").text() > 0 && $(this).prev("input").val() > 0) {
+      $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
+      $("#count").text(Number($("#count").text()) + $(this).data("money"));
+      $(this)
+        .prev("input")
+        .val($(this).prev("input").val() - 1);
+    }
+  });
+  $(".juice_button").on("click", function () {
+    if (
+      $("#" + $(this).prop("id") + "_remain").val() > 0 &&
+      Number($("#count").text()) - $(this).data("price") >= 0
+    ) {
+      $("#count").text(Number($("#count").text()) - $(this).data("price"));
+      let stock = $("#" + $(this).prop("id") + "_remain").val();
+      $("#" + $(this).prop("id") + "_remain").val(stock - 1);
+      $("#" + rensou[$(this).prop("id")]).text(
+        Number($("#" + rensou[$(this).prop("id")]).text()) + 1
+      );
+      $("#remain_count").val($("#remain_count").val() - 1);
+      if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+        $(this).text("売り切れ");
+        $(this).prop("disabled", true);
+      }
+    }
+    if (roulette_flag === 0) {
+      let random = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(random);
+      if (roulette_hit.indexOf(random) !== -1) {
+        roulette_flag = 1;
+        if (Number($("#" + $(this).prop("id") + "_remain").val()) > 0) {
+          $(".juice_button").map(function () {
+            $(this).prop("disabled", false);
+          });
+        }
+      }
+    } else {
+      roulette_flag = 0;
+      $("#roulette").text(0);
+    }
   });
 });
 
