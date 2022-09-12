@@ -1,13 +1,13 @@
 $(function () {
   const rensou = {
-    twelve: side_mituya,
-    fourteen: side_pon,
-    fifteen: side_toropi,
-    eighteen: side_tea,
-    ten: side_lemon,
-    twenty: side_nekuta,
-    thirty: side_cola,
-    fifty: side_pain,
+    twelve: "side_mituya",
+    fourteen: "side_pon",
+    fifteen: "side_toropi",
+    eighteen: "side_tea",
+    ten: "side_lemon",
+    twenty: "side_nekuta",
+    thirty: "side_cola",
+    fifty: "side_pain",
   };
   $(".money_button").on("click", function () {
     if ($(this).prev("input").val() > 0 && $("#money_fifty").text() > 0) {
