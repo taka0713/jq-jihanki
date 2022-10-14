@@ -1,36 +1,25 @@
 $(function () {
-  const rensou = {
-    twelve: "side_mituya",
-    fourteen: "side_pon",
-    fifteen: "side_toropi",
-    eighteen: "side_tea",
-    ten: "side_lemon",
-    twenty: "side_nekuta",
-    thirty: "side_cola",
-    fifty: "side_pain",
-  };
   $(".money_button").on("click", function () {
-    if ($(this).prev("input").val() > 0 && $("#money_fifty").text() > 0) {
-      $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
-      $("#count").text(Number($("#count").text()) + $(this).data("money"));
+    if ($(this).prev("input").val() > 0) {
       $(this)
         .prev("input")
         .val($(this).prev("input").val() - 1);
-    }
-  });
-  $(".juice_button").on("click", function () {
-    if ($("#" + $(this).prop("id") + "_remain").val() > 0) {
-      let stock = $("#" + $(this).prop("id") + "_remain").val();
-      $("#count").text(Number($("#count").text()) - $(this).data("price"));
-      $("#" + $(this).prop("id") + "_remain").val(stock - 1);
-      $("#remain_count").val($("#remain_count").val() - 1);
-      $("#" + rensou[$(this).prop("id")]).text(
-        Number($("#" + rensou[$(this).prop("id")]).text()) + 1
+      $("#money_fifty").text(
+        Number($("#money_fifty").text()) - Number($(this).data("money"))
+      );
+      $("#count").text(
+        Number($("#count").text()) + Number($(this).data("money"))
       );
     }
   });
+  $(".juice_button").on("click", function () {
+    $("#count").text(
+      Number($("#count").text()) - Number($(this).data("price"))
+    );
+  });
 });
 
+console.log(Number($("#money_fifty").text()));
 // let roulette_flag = 0;
 //   $("#roulette").text(0);
 //   $(".juice_button").map(function () {
