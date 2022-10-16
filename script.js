@@ -1,4 +1,15 @@
 $(function () {
+  const rensou = {
+    twelve: "side_mituya",
+    fourteen: "side_pon",
+    fifteen: "side_toropi",
+    eighteen: "side_tea",
+    ten: "side_lemon",
+    twenty: "side_nekuta",
+    thirty: "side_cola",
+    fifty: "side_pain",
+  };
+
   $(".money_button").on("click", function () {
     if ($(this).prev("input").val() > 0) {
       $(this)
@@ -13,9 +24,22 @@ $(function () {
     }
   });
   $(".juice_button").on("click", function () {
-    $("#count").text(
-      Number($("#count").text()) - Number($(this).data("price"))
-    );
+    if (
+      Number($("#count").text()) - Number($(this).data("price")) >= 0 &&
+      $("#" + $(this).prop("id") + "_remain").val() > 0
+    ) {
+      $("#count").text(
+        Number($("#count").text()) - Number($(this).data("price"))
+      );
+      let stock = $("#" + $(this).prop("id") + "_remain").val();
+      $("#" + $(this).prop("id") + "_remain").val(stock - 1);
+      $("#remain_count").val($("#remain_count").val() - 1);
+      $("#" + rensou[$(this).prop("id")]).text(
+        Number($("#" + rensou[$(this).prop("id")]).text()) + 1
+      );
+    }
+    let random = Math.floor(Math.random() * 100);
+    $("#roulette").text(random);
   });
 });
 
