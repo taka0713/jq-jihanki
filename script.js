@@ -1,4 +1,9 @@
 $(function () {
+  let roulette_flag = 0;
+  $("#roulette").text(0);
+
+  const roulette_hit = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+
   const rensou = {
     twelve: "side_mituya",
     fourteen: "side_pon",
@@ -37,9 +42,34 @@ $(function () {
       $("#" + rensou[$(this).prop("id")]).text(
         Number($("#" + rensou[$(this).prop("id")]).text()) + 1
       );
+      if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+        $(this).prop("disabled", true);
+        $(this).text("売り切れ");
+      }
     }
-    let random = Math.floor(Math.random() * 100);
-    $("#roulette").text(random);
+
+    if (roulette_flag === 0) {
+      let random = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(random);
+      if (roulette_hit.indexOf(random) !== -1) {
+        roulette_flag = 1;
+        $("#reset").prop("disabled", true);
+        if (Number($("#" + $(this).prop("id") + "_remain").val()) > 0) {
+          $(".juice_button").map(function () {
+            $(this).prop("disabled", false);
+          });
+        }
+        if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+          $(".juice_button").map(function () {
+            $(this).prop("disabled", true);
+          });
+        }
+      }
+    } else {
+      roulette_flag = 0;
+      $("#roulette").text(0);
+      $("#reset").prop("disabled", false);
+    }
   });
 });
 
