@@ -1,4 +1,17 @@
 $(function () {
+  let roulette_flag = 0;
+
+  let roulette_hit = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+  const rensou = {
+    twelve: "side_mituya",
+    fourteen: "side_pon",
+    fifteen: "side_toropi",
+    eighteen: "side_tea",
+    ten: "side_lemon",
+    twenty: "side_nekuta",
+    thirty: "side_cola",
+    fifty: "side_pain",
+  };
   $(".money_button").on("click", function () {
     if ($(this).prev().val() > 0) {
       $(this)
@@ -6,7 +19,20 @@ $(function () {
         .val($(this).prev().val() - 1);
       $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
       $("#count").text(Number($("#count").text()) + $(this).data("money"));
-      console.log(Number($("#count").text()));
+    }
+  });
+  $(".juice_button").on("click", function () {
+    if (Number($("#count").text()) - $(this).data("price") >= 0) {
+      $("#count").text(Number($("#count").text()) - $(this).data("price"));
+      let stock = $("#" + $(this).prop("id") + "_remain").val();
+      $("#" + $(this).prop("id") + "_remain").val(stock - 1);
+      $("#" + rensou[$(this).prop("id")]).text(
+        Number($("#" + rensou[$(this).prop("id")]).text()) + 1
+      );
+      let random = Math.floor(Math.random() * 99) + 1;
+      $("#roulette").text(random);
+      if (roulette_hit.indexOf(random) !== -1) {
+      }
     }
   });
 });
