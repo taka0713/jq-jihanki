@@ -11,6 +11,23 @@ $(function () {
     thirty: "side_cola",
     fifty: "side_pain",
   };
+
+  let juice_price = () => {
+    $(".juice_button").map(function () {
+      $(this).prop("disabled", $("#count").text() < $(this).data("price"));
+      if (Number($("#" + $(this).prop("id") + "_remain").val()) === 0) {
+        $(this).prop("disabled", true);
+      }
+    });
+  };
+
+  let juice_reset = () => {
+    $(".juice_button").map(function () {
+      $(this).prop("disabled", true);
+      $("#roulette").text(0);
+    });
+  };
+
   $(".money_button").on("click", function () {
     if ($(this).prev().val() > 0) {
       $(this)
@@ -19,11 +36,15 @@ $(function () {
       $("#money_fifty").text($("#money_fifty").text() - $(this).data("money"));
       $("#count").text(Number($("#count").text()) + $(this).data("money"));
     }
+    juice_price();
   });
 
   $(".juice_button").on("click", function () {
     if ($("#" + $(this).prop("id") + "_remain").val() > 0) {
-      $("#count").text(Number($("#count").text()) - $(this).data("price"));
+      if (roulette_flag === 0) {
+        $("#count").text(Number($("#count").text()) - $(this).data("price"));
+      }
+
       let stock = $("#" + $(this).prop("id") + "_remain").val();
       $("#" + $(this).prop("id") + "_remain").val(stock - 1);
       $("#" + rensou[$(this).prop("id")]).text(
@@ -39,7 +60,6 @@ $(function () {
     if (roulette_flag === 0) {
       let random = Math.floor(Math.random() * 99) + 1;
       $("#roulette").text(random);
-      console.log(random);
       if (roulette_hit.indexOf(random) !== -1) {
         roulette_flag = 1;
         $("#reset").prop("disabled", true);
@@ -53,12 +73,34 @@ $(function () {
             $(this).prop("disabled", true);
           });
         }
-      } else {
-        roulette_flag = 0;
-        $("#roulette").text(0);
-        $("#reset").prop("disabled", false);
       }
+    } else {
+      roulette_flag = 0;
+      $("#roulette").text(0);
+      $("#reset").prop("disabled", false);
     }
+    juice_price();
+  });
+
+  $("#reset").on("click", function () {
+    let total_money =
+      Number($("#money_fifty").text()) + Number($("#count").text());
+    $("#money_fifty").text(total_money);
+    $("#count").text(0);
+    $("#roulette").text(0);
+    $("#money_thou").val(Math.floor(total_money / 1000));
+    $("#money_ten").val(Math.floor((total_money % 1000) / 100));
+    $("#money_one").val(Math.floor((total_money % 1000) % 100) / 10);
+    juice_reset();
+  });
+
+  $("#button_first").on("click", function () {
+    $(".all_reset").map(function () {
+      $(this).val($(this).data("default"));
+      $(this).text($(this).data("default"));
+    });
+
+    juice_reset();
   });
 });
 
